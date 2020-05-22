@@ -1,0 +1,99 @@
+admin:
+  access_log_path: /dev/stdout
+  address:
+    socket_address: { address: 127.0.0.1, port_value: 9901 }
+
+static_resources:
+  listeners:
+  - name: listener_0
+    address:
+      socket_address: { address: 0.0.0.0, port_value: 10000 }
+    filter_chains:
+    - filters:
+      - name: envoy.filters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+          stat_prefix: ingress_http
+          route_config:
+            name: local_route
+            virtual_hosts:
+            - name: namespace.local_service
+              domains: ["*"]
+              routes:
+              - match: { prefix: "/static" }
+                route:
+                  cluster: somecluster
+                typed_per_filter_config:
+                  envoy.filters.http.ext_authz:
+                    "@type": "type.googleapis.com/envoy.extensions.filters.http.ext_authz.v3.ExtAuthzPerRoute"
+                    disabled: true
+              - match: { prefix: "/" }
+                route:
+                  cluster: somecluster
+                  rate_limits:
+                  - actions:
+                    - {source_cluster: {}}
+                    - {generic_key: {descriptor_value: some_value}}
+          http_filters:
+          - name: envoy.filters.http.ext_authz
+            typed_config:
+              "@type": type.googleapis.com/envoy.extensions.filters.http.ext_authz.v3.ExtAuthz
+              status_on_error:
+                code: GatewayTimeout
+              grpc_service:
+                timeout: 5s
+                envoy_grpc:
+                  cluster_name: ext-authz
+          - name: envoy.filters.http.ratelimit
+            typed_config:
+              "@type": type.googleapis.com/envoy.extensions.filters.http.ratelimit.v3.RateLimit
+              domain: "domain"
+              timeout: 5s
+              rate_limit_service:
+                grpc_service:
+                  timeout: 5s
+                  envoy_grpc:
+                    cluster_name: rate-limit
+          - name: envoy.filters.http.router
+  clusters:
+  - name: ext-authz
+    http2_protocol_options: {}
+    connect_timeout: 0.25s
+    type: logical_dns
+    lb_policy: round_robin
+    load_assignment:
+      cluster_name: ext-authz
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: 127.0.0.1
+                port_value: 10004
+  - name: rate-limit
+    http2_protocol_options: {}
+    connect_timeout: 0.25s
+    type: logical_dns
+    lb_policy: round_robin
+    load_assignment:
+      cluster_name: rate-limit
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: 127.0.0.1
+                port_value: 10004
+  - name: somecluster
+    connect_timeout: 0.25s
+    type: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    load_assignment:
+      cluster_name: rate-limit
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: 127.0.0.1
+                port_value: 8082
