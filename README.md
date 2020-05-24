@@ -3,7 +3,7 @@
 What is:
 - envoy
   - Extendability
-  - configuration via API
+  - Configuration via API
 - listeners
 - clusters
 - endpoints
@@ -22,7 +22,7 @@ What is:
 How is routing decision done?
 +-------------+         +------------+          +--------------+           +---------------+          +----------------+
 |             |         |            |          |              |           |               |          |                |
-| tcp filters +-------->+ HCM filter +--------->+ http filters +---------->+ router filter +--------->+ host selection |
+| TCP filters +-------->+ HCM filter +--------->+ http filters +---------->+ router filter +--------->+ host selection |
 |             |         |            |          |              |           |               |          |                |
 +-------------+         +------------+          +--------------+           +---------------+          +----------------+
 
@@ -60,6 +60,7 @@ curl localhost:9901/stats|grep somecluster.upstream_rq
 
 stats that end with _total are usually counters.
 stats that end with _active are usually gauges.
+stats that end with _time are usually histograms.
 
 Navigating the config dump:
 
@@ -131,7 +132,7 @@ envoy -c response-header.yaml&
 curl http://localhost:10000 -v
 ```
 
-### auth and RL
+### Auth and RL
 
 remember: route order matter.
 note: for newer filters, route level configuration is provided using typed_per_filter_config for extendability.

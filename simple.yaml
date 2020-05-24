@@ -30,7 +30,7 @@ static_resources:
     type: STRICT_DNS
     lb_policy: ROUND_ROBIN
     load_assignment:
-      cluster_name: rate-limit
+      cluster_name: somecluster
       endpoints:
       - lb_endpoints:
         - endpoint:
