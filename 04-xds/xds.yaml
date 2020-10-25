@@ -1,0 +1,50 @@
+node:
+  id: node-1
+  cluster: edge-gateway
+
+admin:
+  access_log_path: /dev/stdout
+  address:
+    socket_address: { address: 127.0.0.1, port_value: 9901 }
+
+dynamic_resources:
+  ads_config:
+    # allows limiting the rate of discovery requests.
+    # for edge cases with very frequent requests or due to a bug.
+    rate_limit_settings:
+      max_tokens: 10
+      fill_rate: 3
+    # we use v3 xDS framing
+    transport_api_version: V3
+    # over gRPC
+    api_type: GRPC
+    grpc_services:
+      - envoy_grpc:
+          cluster_name: xds_cluster
+  # Use ADS for LDS and CDS; request V3 clusters and listeners.
+  lds_config: {ads: {}, resource_api_version: V3}
+  cds_config: {ads: {}, resource_api_version: V3}
+
+static_resources:
+  clusters:
+  - name: xds_cluster
+    connect_timeout: 0.25s
+    type: STATIC
+    lb_policy: ROUND_ROBIN
+    # as we are using gRPC xDS we need to set the cluster to use http2
+    http2_protocol_options: {}
+    upstream_connection_options:
+      # important:
+      # configure a TCP keep-alive to detect and reconnect to the admin
+      # server in the event of a TCP socket half open connection
+      # the default values are very conservative, so you will want to tune them.
+      tcp_keepalive: {}
+    load_assignment:
+      cluster_name: xds_cluster
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: 127.0.0.1
+                port_value: 9977

@@ -1,0 +1,10 @@
+{
+    "input": {
+        "method": "POST",
+        "path": ["reviews","alice","first_post"],
+        "sub": "alice",
+        "claims": [
+            "write:posts"
+        ]
+    }
+}

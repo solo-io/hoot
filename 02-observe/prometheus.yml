@@ -1,0 +1,13 @@
+global:
+  # How frequently to scrape targets by default.
+  scrape_interval: 1s
+
+  # How long until a scrape request times out.
+  scrape_timeout: 1s
+
+scrape_configs:
+- job_name: envoy
+  metrics_path: /stats/prometheus
+  static_configs:
+  - targets:
+    - 127.0.0.1:9901

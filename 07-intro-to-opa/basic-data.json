@@ -1,0 +1,10 @@
+{
+    "orgs":{
+        "solo.io":{
+            "members":["yuval", "idit"]
+        },
+        "fabrikam":{
+            "members":["bob", "alice", "yuval"]
+        }
+    }
+}

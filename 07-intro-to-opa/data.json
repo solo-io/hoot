@@ -1,0 +1,12 @@
+{
+    "claims":{
+        "write:posts": {
+            "methods":["POST", "PATCH"],
+            "path_prefix":["posts"]
+        },
+        "write:reviews": {
+            "methods":["POST", "PATCH"],
+            "path_prefix":["reviews"]
+        }
+    }
+}
