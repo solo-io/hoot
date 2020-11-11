@@ -9,3 +9,4 @@ Videos:
 - Envoy WASM filters - https://www.youtube.com/watch?v=8fty-sqFyoY
 - Into to OPA - https://www.youtube.com/watch?v=iaDuJIZj6Yw
 - OPA + Envoy - https://www.youtube.com/watch?v=X1sdpMkHW9U
+- GitOps + Flux - https://www.youtube.com/watch?v=KKOARkFcllU
