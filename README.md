@@ -10,3 +10,4 @@ Videos:
 - Into to OPA - https://www.youtube.com/watch?v=iaDuJIZj6Yw
 - OPA + Envoy - https://www.youtube.com/watch?v=X1sdpMkHW9U
 - GitOps + Flux - https://www.youtube.com/watch?v=KKOARkFcllU
+- Waypoint - https://www.youtube.com/watch?v=VSr1hXPP2vQ
