@@ -26,14 +26,14 @@ static_resources:
                 retry_on: "cancelled,connect-failure,gateway-error,refused-stream,reset,resource-exhausted,unavailable"
                 num_retries: 2
                 host_selection_retry_max_attempts: 5
+
               routes:
               - match:
                   prefix: "/"
                 route:
                   cluster: upstream
-
-
           http_filters:
+
           - name: envoy.filters.http.health_check
             typed_config:
               "@type": type.googleapis.com/envoy.extensions.filters.http.health_check.v3.HealthCheck
@@ -41,6 +41,7 @@ static_resources:
               headers:
               - name: ":path"
                 exact_match: "/health"
+
           - name: envoy.filters.http.router
             typed_config: {}
   clusters:

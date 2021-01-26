@@ -149,7 +149,7 @@ func main() {
 	// Create a cache
 	cache := cachev3.NewSnapshotCache(false, ClusterNodeHasher{}, l)
 
-	updateService := func(ports ...uint32) {
+	updateEnvoyWithServiceEndpoints := func(ports ...uint32) {
 		// simulate a delay in propagating state to envoy
 		time.Sleep(time.Second)
 
@@ -160,12 +160,6 @@ func main() {
 			os.Exit(1)
 		}
 	}
-
-	fmt.Println("starting service 1")
-	cancel1 := StartService("svc1", 8080)
-
-	// Create the snapshot that we'll serve to Envoy
-	updateService(8080)
 
 	// Run the xDS server
 	ctx := context.Background()
@@ -179,46 +173,55 @@ func main() {
 	// interesting part starts here: //
 	///////////////////////////////////
 
-	fmt.Print("Press enter to deploy svc 2, and remove service 1")
-	reader.ReadString('\n')
-
-	fmt.Print("Deploying svc 2")
-	// start second service
-	cancel2 := StartServiceWithDrain("svc2", 201, 8081)
+	fmt.Println("starting service 1")
+	exitSvc1 := StartService("svc1", 200, 8080)
 
 	// Create the snapshot that we'll serve to Envoy
-	updateService(8080, 8081)
+	updateEnvoyWithServiceEndpoints(8080)
 
-	fmt.Print("Removing svc 1")
+	/// Deploy service 2 and remove service 1
+	fmt.Println("Press enter to deploy svc 2, and remove service 1")
+	reader.ReadString('\n')
+
+	fmt.Println("Deploying svc 2")
+	// start second service
+	drainSvc2 := StartServiceWithDrain("svc2", 201, 8081)
+
+	// Create the snapshot that we'll serve to Envoy
+	updateEnvoyWithServiceEndpoints(8080, 8081)
+
+	fmt.Println("Removing svc 1")
 	// remove first service
-	cancel1()
+	exitSvc1()
 
-	updateService(8081)
+	updateEnvoyWithServiceEndpoints(8081)
 
-	fmt.Print("Press enter to deploy svc 3, and drain service 2")
+	/// Deploy service 3 and drain service 2
+	fmt.Println("Press enter to deploy svc 3, and drain service 2")
 	reader.ReadString('\n')
 
 	// deploy and drain
-	fmt.Print("Deploying svc 3")
+	fmt.Println("Deploying svc 3")
 	StartServiceWithDrain("svc3", 202, 8082)
 	// Create the snapshot that we'll serve to Envoy
 
-	updateService(8081, 8082)
+	updateEnvoyWithServiceEndpoints(8081, 8082)
 
 	// remove service 2
-	cancel2()
+	drainSvc2()
 
 	// wait with updating envoy during drain period.
 	// envoy should also mark service as unhealthy during this period, and stop routing new requests.
 
 	// remove drained service
-	updateService(8082)
-	fmt.Print("Press enter to exit")
+	updateEnvoyWithServiceEndpoints(8082)
+	fmt.Println("Press enter to exit")
 	reader.ReadString('\n')
 }
 
-func StartService(text string, port int) func() {
+func StartService(text string, statusCode int, port int) func() {
 	handler := http.HandlerFunc(func(rw http.ResponseWriter, r *http.Request) {
+		rw.WriteHeader(statusCode)
 		rw.Write([]byte(text))
 	})
 
