@@ -23,7 +23,7 @@ static_resources:
                     default_value: 400
                     runtime_key: "filter.request_type"
             typed_config:
-              "@type": "type.googleapis.com/envoy.config.accesslog.v2.FileAccessLog"
+              "@type": "type.googleapis.com/envoy.extensions.access_loggers.file.v3.FileAccessLog"
               path: /dev/stdout
           stat_prefix: edge_http
           route_config:
