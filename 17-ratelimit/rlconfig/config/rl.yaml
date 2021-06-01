@@ -1,0 +1,20 @@
+domain: domain1
+descriptors:
+- key: generic_key
+  value: client
+  descriptors:
+    - key: remote_address
+      rate_limit:
+        unit: SECOND
+        requests_per_unit: 1
+- key: generic_key
+  value: resources
+  rate_limit:
+    unit: SECOND
+    requests_per_unit: 1
+  descriptors:
+  - key: header_match
+    value: post_request
+    rate_limit:
+      unit: MINUTE
+      requests_per_unit: 10
