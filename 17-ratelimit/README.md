@@ -1,3 +1,24 @@
+# Intro
+
+Global rate limiting is performed using a server external to envoy that holds the rate limit counter state. The envoy projects provides an implementation that uses Redis. You can create your own server by
+implementing the Rate Limit gRPC API.
+
+Rate limits Descriptors are configured in envoy using a list of actions.
+Each Action may generate a Descriptor Entry (a key and value). If it does not, the descriptor is not generated (usually).
+
+So for a request that envoy wants to rate limit, it sends a list of descriptors, each descriptor has
+an ordered list of descriptor entries, and each descriptor entry has a string key and value.
+
+A visual example for 2 descriptors:
+```
+[(generic_key, foo), (header_value, bar)]
+[(generic_key, abc), (remote_address, 1.2.3.4), (header_value, edf)]
+```
+
+The rate limit server then increments a counter for each descriptor. If for any of the descriptors the
+counter goes above the limit defined in the server config, the request is rate limited.
+
+# Demo    
 Run some server (doesn't really matter what, just so we get an OK response):
 ```
 python -m http.server --bind 127.0.0.1 8082&
