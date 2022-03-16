@@ -1,0 +1,49 @@
+repositories:
+  # Repositories of Helm charts
+  - name: istio
+    url: https://istio-release.storage.googleapis.com/charts
+  - name: prometheus-community
+    url: https://prometheus-community.github.io/helm-charts
+
+releases:
+  # Deploys base Istio components
+  - name: istio-base
+    chart: istio/base
+    version: 1.13.2
+    namespace: istio-system
+    createNamespace: true
+
+  # Deploys Istio control-plane
+  - name: istio-discovery
+    chart: istio/istiod
+    version: 1.13.2
+    namespace: istio-system
+    needs:
+      - istio-system/istio-base
+    values:
+      - pilot:
+          resources:
+            requests:
+              cpu: 10m
+              memory: 100Mi
+          autoscaleEnabled: false
+
+  # Deploys istio-ingressgateway for inbound traffic
+  - name: istio-ingressgateway
+    chart: istio/gateway
+    version: 1.13.2
+    namespace: istio-system
+    needs:
+      - istio-system/istio-base
+      - istio-system/istio-discovery
+
+# Monitoring and logging components
+#
+  # Deploys Prometheus stack into monitoring namespace
+  - name: kube-prometheus-stack
+    chart: prometheus-community/kube-prometheus-stack
+    version: 32.3.0
+    namespace: monitoring
+    createNamespace: true
+    values:
+      - values/kube-prometheus-stack/values.yaml
