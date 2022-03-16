@@ -1,6 +1,7 @@
 ![Hoot Image](images/hoot-background.png)
 # Hoot - Learn Kubernetes, Envoy, Istio, eBPF and GraphQL
-We understand it is important for you to learn Kubernetes, Envoy, Istio, eBPF and GraohQL as part of your journey to cloud native so you can make sense of any technology or architecture decision. Hoot is designed to help you learn these technologies.
+We understand it is important for you to learn Envoy, Istio, Kubernetes, eBPF and GraohQL as part of your journey to cloud native so you can make sense of any technology or architecture decision. Hoot is designed to help you learn these technologies so you can be well prepared at your job!
+
 ## Upcoming episodes
 
 Episode #21: [Accelerate your mesh with eBPF and Merbridge](TBD)
