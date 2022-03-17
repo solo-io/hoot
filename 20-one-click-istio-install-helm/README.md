@@ -175,8 +175,21 @@ data plane version: 1.13.2 (7 proxies)
 Istio are enhanced with different types of metrics, covering both the control and the data plane.
 These are all compatible with Prometheus, the de-facto monitoring tool for cloud native system.
 
-If you add the `istioperformance.json` dashboard to your Grafana, you can explore the improvements of your Istio upgrades via these metrics, e.g. performance optimalizations.
+If you add the [istioperformance.json](istioperformance.json) dashboard to your Grafana, you can explore the improvements of your Istio upgrades via these metrics, e.g. performance optimalizations.
 
+Set up port-forward:
+
+```console
+kubectl port-forward -n monitoring deploy/kube-prometheus-stack-grafana 3000:3000
+```
+
+Access your Grafana dashboard from a browser by visiting `http://localhost:3000/login`. Enter user `admin` and password `prom-operator`. Click on `Create` then `Import` to import the [istioperformance.json](istioperformance.json) dashboard to your Grafana.
+
+Tip: use the following command to find the password if it is not using the default `prom-operator` password:
+
+```console
+kubectl get secret kube-prometheus-stack-grafana -o jsonpath="{.data.admin-password}" -n monitoring | base64 --decode ; echo
+```
 
 ## Cleanup
 
