@@ -13,11 +13,25 @@ Istio maintainers are regularly releasing new minor and path versions to provide
 
 Istio provides multiple upgrade strategies, in this session we will look into in-place upgrades with the help of the official Helm charts and helmfile. 
 
-
 ## Platform setup
 
+If you don't have a kubernetes cluster, deploy one, for example:
+
 ```console
-minikube start --memory=16384 --cpus=4 --kubernetes-version=v1.20.2
+minikube start --memory=16384 --cpus=4 --kubernetes-version=v1.21.2
+```
+
+Install helmfile following its [installation instruction](https://github.com/roboll/helmfile#installation), for example:
+
+```console
+brew install helmfile
+```
+
+Add Istio's helm repo:
+
+```console
+helm repo add istio https://istio-release.storage.googleapis.com/charts
+helm repo update
 ```
 
 ## Deploying Istio
@@ -25,7 +39,7 @@ minikube start --memory=16384 --cpus=4 --kubernetes-version=v1.20.2
 Clone this repository, go the the folder of this episode, then:
 
 ```console
-$ helmfile sync
+helmfile sync
 ```
 
 > Optionally, you can pass the `--debug` flag in order to get a more verbose output.
@@ -44,7 +58,10 @@ With the help of `istioclt`, you can validate the versions of control and datapl
 
 ```console
 $ istioctl version
+```
 
+Sample output:
+```console
 client version: 1.13.2
 control plane version: 1.12.5
 data plane version: 1.12.5 (1 proxies)
@@ -55,40 +72,44 @@ data plane version: 1.12.5 (1 proxies)
 First, we are enabling the injection of Istio sidecars in the `default` namespace.
 
 ```console
-$ kubectl label namespace default istio-injection=enabled
+kubectl label namespace default istio-injection=enabled
 ```
 
 Then, we are deploying our sample application, called Bookinfo.
 
 ```console
-$ kubectl apply -f https://raw.githubusercontent.com/istio/istio/master/samples/bookinfo/platform/kube/bookinfo.yaml
+kubectl apply -f https://raw.githubusercontent.com/istio/istio/master/samples/bookinfo/platform/kube/bookinfo.yaml
 ```
 
-Then finally, we are adding an Istio gateway, to make it available from outside of the cluster.
+Then finally, we are adding an Istio gateway resource, to make the bookinfo application available from outside of the cluster.
 
 ```console
-$ kubectl apply -f https://raw.githubusercontent.com/istio/istio/master/samples/bookinfo/networking/bookinfo-gateway.yaml
+kubectl apply -f https://raw.githubusercontent.com/istio/istio/master/samples/bookinfo/networking/bookinfo-gateway.yaml
 ```
 
 We can validate that everything is working by crafting the URL of the application.
 
 ```console
-$ export INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].nodePort}')
-$ export INGRESS_HOST=$(minikube ip)
-$ export GATEWAY_URL=$INGRESS_HOST:$INGRESS_PORT
+export INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].nodePort}')
+export INGRESS_HOST=$(minikube ip)
+export GATEWAY_URL=$INGRESS_HOST:$INGRESS_PORT
 ```
 
 Then, we can print this:
 
 ```console
-$ echo $GATEWAY_URL
+echo $GATEWAY_URL
+```
+
+Sample output:
+```console
 192.168.64.2:30701
 ```
 
 After this, we can curl the Productpage.
 
 ```console
-$ curl -s "http://${GATEWAY_URL}/productpage"
+curl -s "http://${GATEWAY_URL}/productpage"
 ```
 
 ## Upgrading Istio
@@ -98,7 +119,7 @@ $ curl -s "http://${GATEWAY_URL}/productpage"
 Bump version of charts in `helmfile.yaml` to the desired Istio version, e.g. 1.13.2
 
 ```console
-$ helmfile sync|apply
+helmfile sync|apply
 ```
 
 Sample output:
@@ -114,8 +135,11 @@ istio-ingressgateway    istio/gateway                                 1.13.2
 Validation via istioctl:
 
 ```console
-$ istioctl version
+istioctl version
+```
 
+Sample output:
+```console
 client version: 1.13.2
 control plane version: 1.13.2
 data plane version: 1.12.3 (7 proxies) 
@@ -126,18 +150,21 @@ data plane version: 1.12.3 (7 proxies)
 First, we perform a rolling restart of the ingress-gateway.
 
 ```console
-$ kubectl rollout restart deployment istio-ingressgateway -n istio-system
+kubectl rollout restart deployment istio-ingressgateway -n istio-system
 ```
 
 ```console
-$ kubectl rollout restart deployment -n default
+kubectl rollout restart deployment -n default
 ```
 
 Validation via istioctl
 
 ```console
-$ istioctl version
+istioctl version
+```
 
+Sample output:
+```console
 client version: 1.13.2
 control plane version: 1.13.2
 data plane version: 1.13.2 (7 proxies)
@@ -156,11 +183,11 @@ If you add the `istioperformance.json` dashboard to your Grafana, you can explor
 You can delete all the previously installed Helm releases.
 
 ```console
-$ helmfile destroy
+helmfile destroy
 ```
 
 Or, you can also delete you Minikube cluster
 
 ```console
-$ minikube delete
+minikube delete
 ```
