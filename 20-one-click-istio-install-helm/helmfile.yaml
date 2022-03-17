@@ -9,14 +9,14 @@ releases:
   # Deploys base Istio components
   - name: istio-base
     chart: istio/base
-    version: 1.13.2
+    version: 1.12.5
     namespace: istio-system
     createNamespace: true
 
   # Deploys Istio control-plane
   - name: istio-discovery
     chart: istio/istiod
-    version: 1.13.2
+    version: 1.12.5
     namespace: istio-system
     needs:
       - istio-system/istio-base
@@ -31,7 +31,7 @@ releases:
   # Deploys istio-ingressgateway for inbound traffic
   - name: istio-ingressgateway
     chart: istio/gateway
-    version: 1.13.2
+    version: 1.12.5
     namespace: istio-system
     needs:
       - istio-system/istio-base
