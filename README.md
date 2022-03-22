@@ -4,7 +4,10 @@ We understand it is important for you to learn Envoy, Istio, Kubernetes, eBPF an
 
 ## Upcoming episodes
 
-Episode #21: [Accelerate your mesh with eBPF and Merbridge](TBD)
+Episode #21: [Istio In Action Book Highlight](https://www.youtube.com/watch?v=gpWuVnOyWnE)
+- 1pm ET, 10am PT on March 22, 2022.
+
+Episode #22: [Accelerate your mesh with eBPF and Merbridge](TBD)
 - 10am ET, 7am PT, 10pm China time on March 29, 2022.
 
 ## Suggest a topic
