@@ -2,14 +2,18 @@
 
 1 min hook to today's hoot.
 
+Istio in action book was officially out last week!  It already has 2000+ views in the last week! (https://www.manning.com/books/istio-in-action) Should you add the book to your reading list? Today we will discuss some of the contents from the book so you can make an informative decision.
 
 **speaker intro** (2 mins)
-Welcome to hoot livestream, where we bring istio, envoy, k8s, ebpf & graphql technologies to you so you can be well prepared at your job, be the best developer/operator/architect!
+Welcome to hoot livestream, where we bring istio, envoy, k8s, ebpf & graphql technologies to you so you can be well prepared at your job, be the best cloud native developer/operator/architect!
 Lin: host for hoot livestream today.
 speakers: intro
 
 **News (2 mins)**
-Istio In action book officially released last week!
+- Episode 20 hoot steps updated: https://twitter.com/linsun_unc/status/1504535664129462280?s=20&t=ZLKyHCQRoFRrGBEVOwvJfQ
+- IstioCon registration: get the tshirt: https://istio.io/latest/blog/2022/istiocon-register/
+- Istio 1.11 EOL: https://istio.io/latest/news/support/announcing-1.11-eol/
+- Greg joins Solo: https://twitter.com/christianposta/status/1505911681729241098?s=20&t=ZLKyHCQRoFRrGBEVOwvJfQ
 
 **General questions about the book** (15 mins)
 - Who is the book for?
@@ -22,9 +26,11 @@ Istio In action book officially released last week!
 
 feel free to share a few slides 
 
+- I am very impressed by the breath and depth of the book, covering beginner, intermediate and advanced topics. Anything you want to highlight for beginner and intermediate readers?
+
 - Any advice for folks who are interested in writing a book?
 
-** Dive into chapter 11** (10 mins)
+** Dive into chapter 11 (advanced topic)** (10 mins)
 - can you talk about phantom workloads and its impact?
 
 - what are the four golden signals of control plane?
@@ -39,5 +45,5 @@ feel free to share a few slides
 
 
 **wrap up** (2 mins)
-- Thank speaker! Ask speakers: How do folks reach out to you?
-- Is this interesting? What other topics do you want to see to help you on your application networking? Remind folks to comment, like and subscribe.
+- Thank speakers! Ask speakers: How do folks reach out to you?
+- Is this interesting? What other topics do you want to see to help you on your application networking? Remind folks to comment, like and subscribe. See you next Tues (accelerate service mesh adoption with eBPF & merbridge)!

@@ -4,5 +4,6 @@ https://www.youtube.com/watch?v=gpWuVnOyWnE
 
 [show notes](SHOWNOTES.md)
 
-[slides]()
+[slides](Optimizing-the-control-plane-performance.pdf)
 
+## Hands-on
