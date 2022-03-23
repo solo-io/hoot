@@ -4,11 +4,18 @@ We understand it is important for you to learn Envoy, Istio, Kubernetes, eBPF an
 
 ## Upcoming episodes
 
-Episode #21: [Istio In Action Book Highlight](https://www.youtube.com/watch?v=gpWuVnOyWnE)
-- 1pm ET, 10am PT on March 22, 2022.
-
 Episode #22: [Accelerate your mesh with eBPF and Merbridge](TBD)
 - 10am ET, 7am PT, 10pm China time on March 29, 2022.
+
+Episode #23 TBD
+- 1pm ET, 10am PT on April 5, 2022.
+
+** no hoot livestream on April 12, 2022 **
+
+Episode #24 TBD
+- 1pm ET, 10am PT on April 19, 2022.
+
+** no hoot livestream on April 26, 2022 due to IstioCon **
 
 ## Suggest a topic
 Please [open an issue](https://github.com/solo-io/hoot/issues) if you have an idea for a topic we should cover or a guest we should invite.
@@ -39,4 +46,5 @@ Videos:
 - Episode 18: Envoy Filters- https://www.youtube.com/watch?v=yOtEG1luTwU
 - Episode 19: eBPF: A Top-Down view - https://www.youtube.com/watch?v=PqghsyBF7ug
 - Episode 20: 1-Click Upgrade to Istio 1.13 using Helm - https://www.youtube.com/watch?v=Q3G5TEmXq7o
+- Episode #21: Istio In Action Book Highlight https://www.youtube.com/watch?v=gpWuVnOyWnE
 
