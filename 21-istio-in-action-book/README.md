@@ -100,9 +100,8 @@ kubectl label ns new-namespace istio-exclude=true
 Let's verify that the cluster is removed:
 ```
 $ istioctl pc clusters deploy/catalog.istioinaction | grep echo
-
-<no output>
 ```
+The output should be empty.
 
 ## Receiving only relevant updates
 
