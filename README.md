@@ -4,10 +4,10 @@ We understand it is important for you to learn Envoy, Istio, Kubernetes, eBPF an
 
 ## Upcoming episodes
 
-Episode #22: [Accelerate your mesh with eBPF and Merbridge](TBD)
+Episode #22: [Accelerate your mesh with eBPF and Merbridge](https://www.youtube.com/watch?v=r2wgInmsqsU)
 - 10am ET, 7am PT, 10pm China time on March 29, 2022.
 
-Episode #23 TBD
+Episode #23 [HOW to increase application resiliency for Kubernetes services running on Spot VMs](https://www.youtube.com/watch?v=WIcWekCQTJU)
 - 1pm ET, 10am PT on April 5, 2022.
 
 ** no hoot livestream on April 12, 2022 **
