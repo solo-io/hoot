@@ -4,9 +4,7 @@ We understand it is important for you to learn Envoy, Istio, Kubernetes, eBPF an
 
 ## Upcoming episodes
 
-Episode #22: [Accelerate your mesh with eBPF and Merbridge](https://www.youtube.com/watch?v=r2wgInmsqsU)
-- 10am ET, 7am PT, 10pm China time on March 29, 2022.
-
+[View Episode Calendar](https://calendar.google.com/calendar/embed?src=c_lnbos22onj2mi70gjf3r6211l0%40group.calendar.google.com&ctz=America%2FDenver) | [Add Google Calendar](https://calendar.google.com/calendar/u/0?cid=Y19sbmJvczIyb25qMm1pNzBnamYzcjYyMTFsMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t)
 Episode #23 [HOW to increase application resiliency for Kubernetes services running on Spot VMs](https://www.youtube.com/watch?v=WIcWekCQTJU)
 - 1pm ET, 10am PT on April 5, 2022.
 
@@ -46,5 +44,6 @@ Videos:
 - Episode 18: Envoy Filters- https://www.youtube.com/watch?v=yOtEG1luTwU
 - Episode 19: eBPF: A Top-Down view - https://www.youtube.com/watch?v=PqghsyBF7ug
 - Episode 20: 1-Click Upgrade to Istio 1.13 using Helm - https://www.youtube.com/watch?v=Q3G5TEmXq7o
-- Episode #21: Istio In Action Book Highlight https://www.youtube.com/watch?v=gpWuVnOyWnE
+- Episode 21: Istio In Action Book Highlight https://www.youtube.com/watch?v=gpWuVnOyWnE
+- Episode 22: Accelerate your mesh with eBPF and Merbridge https://www.youtube.com/watch?v=r2wgInmsqsU
 
