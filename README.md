@@ -5,6 +5,7 @@ We understand it is important for you to learn Envoy, Istio, Kubernetes, eBPF an
 ## Upcoming episodes
 
 [View Episode Calendar](https://calendar.google.com/calendar/embed?src=c_lnbos22onj2mi70gjf3r6211l0%40group.calendar.google.com&ctz=America%2FDenver) | [Add Google Calendar](https://calendar.google.com/calendar/u/0?cid=Y19sbmJvczIyb25qMm1pNzBnamYzcjYyMTFsMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t)
+
 Episode #23 [HOW to increase application resiliency for Kubernetes services running on Spot VMs](https://www.youtube.com/watch?v=WIcWekCQTJU)
 - 1pm ET, 10am PT on April 5, 2022.
 
