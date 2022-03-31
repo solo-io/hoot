@@ -30,10 +30,14 @@ kind create cluster --name merbridge
 ```
 istioctl install -y
 ```
-# Apply the sleep and the helloworld service
+
+Apply the sleep and the helloworld service:
+
+```
 kubectl label namespace default istio-injection=enabled
 curl https://raw.githubusercontent.com/istio/istio/master/samples/sleep/sleep.yaml | kubectl apply -f -
 curl https://raw.githubusercontent.com/istio/istio/master/samples/helloworld/helloworld.yaml| kubectl apply -f -
+```
 
 3. Start Merbridge
 kubectl apply -f https://raw.githubusercontent.com/merbridge/merbridge/main/deploy/all-in-one.yaml
