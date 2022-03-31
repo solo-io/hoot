@@ -1,5 +1,6 @@
 # Hoot Episode 22 - Accelerate your service mesh with eBPF and Merbridge
 
+![Merbridge Image](merbridge.jpg)
 ## Recording ##
  https://youtu.be/r2wgInmsqsU
 
