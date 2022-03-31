@@ -70,13 +70,13 @@ containers:
 sudo cat /sys/kernel/debug/tracing/trace_pipe
 ```
 
-6. try to make requests
+6. make requests:
 
 ```
 kubectl exec deploy/sleep -it -- curl helloworld:5000/hello
 ```
 
-7. try to manipulate iptables rules of sleep
+7. manipulate iptables rules of sleep:
 
 ```
 ps -ef | grep 3650d # grep the sleep process id
