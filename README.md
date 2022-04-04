@@ -11,7 +11,7 @@ Episode #23 [HOW to increase application resiliency for Kubernetes services runn
 
 ** no hoot livestream on April 12, 2022 **
 
-Episode #24 TBD
+Episode #24 [Debug Envoy Configs and Analyze Access Logs](https://www.youtube.com/watch?v=OQFFIXFeZns) 
 - 1pm ET, 10am PT on April 19, 2022.
 
 ** no hoot livestream on April 26, 2022 due to IstioCon **
