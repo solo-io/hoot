@@ -54,7 +54,7 @@ istio-discovery        istio/istiod     1.12.5
 istio-ingressgateway   istio/gateway    1.12.5
 ```
 
-With the help of `istioclt`, you can validate the versions of control and dataplanes.
+With the help of `istioctl`, you can validate the versions of control and dataplanes.
 
 ```console
 $ istioctl version
