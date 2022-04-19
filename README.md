@@ -6,12 +6,19 @@ We understand it is important for you to learn Envoy, Istio, Kubernetes, eBPF an
 
 [View Episode Calendar](https://calendar.google.com/calendar/embed?src=c_lnbos22onj2mi70gjf3r6211l0%40group.calendar.google.com&ctz=America%2FDenver) | [Add Google Calendar](https://calendar.google.com/calendar/u/0?cid=Y19sbmJvczIyb25qMm1pNzBnamYzcjYyMTFsMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t)
 
-** no hoot livestream on April 12, 2022 **
-
 Episode 24 [Debug Envoy Configs and Analyze Access Logs](https://www.youtube.com/watch?v=OQFFIXFeZns) 
 - 1pm ET, 10am PT on April 19, 2022.
 
 ** no hoot livestream on April 26, 2022 due to IstioCon **
+
+Episode 25 Istio + VM + Spire
+- 1pm ET, 10am PT on May 3, 2022.
+
+Episode 26 TBD
+- 1pm ET, 10am PT on May 10, 2022.
+
+** no hoot livestream on May 17, 2022 due to SMC EU **
+
 ## Suggest a topic
 Please [open an issue](https://github.com/solo-io/hoot/issues) if you have an idea for a topic we should cover or a guest we should invite.
 ## Previous episodes
