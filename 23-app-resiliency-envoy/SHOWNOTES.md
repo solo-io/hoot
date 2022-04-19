@@ -1,4 +1,4 @@
-# Hoot Episode 22, March 29, 2022
+# Hoot Episode 23, April 5, 2022
 HOW to Increase service resiliency for services running on Kubernetes on Spot VMs
 
 https://github.com/murphye/cheap-gke-cluster
