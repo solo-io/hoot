@@ -9,7 +9,8 @@ We understand it is important for you to learn Envoy, Istio, Kubernetes, eBPF an
 Episode 25 Istio + VM + Spire: https://www.youtube.com/watch?v=WOPoNqfrhb4
 - 1pm ET, 10am PT on May 3, 2022.
 
-Episode 26 TBD
+Episode 26 Declarative Kubernetes Lifecycle Management Across Multi-Clusters/Clouds 
+with Cluster API: https://www.youtube.com/watch?v=fKeqbkGiHog
 - 1pm ET, 10am PT on May 10, 2022.
 
 ** no hoot livestream on May 17, 2022 due to SMC EU **
