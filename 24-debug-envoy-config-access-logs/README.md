@@ -1,4 +1,4 @@
-# Hoot Episode 23 - HOW to Increase service resiliency for services running on Kubernetes on Spot VMs
+# Hoot Episode 24 - Debug Envoy Configs and Analyze Access Logs
 
 
 ## Recording ##
