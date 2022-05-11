@@ -10,5 +10,5 @@ if [ "$1" = "macos" ]; then
 fi
 
 if [ "$1" = "linux" ]; then
-    wget -c https://github.com/istio/istio/releases/download/1.14.0-alpha.0/istio-1.14.0-alpha.0-linux-amd64.tar.gz -O - | tar -xz
+    wget -c https://github.com/istio/istio/releases/download/1.14.0-alpha.0/istioctl-1.14.0-alpha.0-linux-amd64.tar.gz -O - | tar -xz
 fi
