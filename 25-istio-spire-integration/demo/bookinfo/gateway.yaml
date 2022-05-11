@@ -1,0 +1,69 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: bookinfo-gateway
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    - port:
+        number: 8080
+        name: http
+        protocol: HTTP
+      hosts:
+        - "*"
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: bookinfo-gateway-mtls
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    - port:
+        number: 7080
+        name: https
+        protocol: HTTPS
+      tls:
+        mode: ISTIO_MUTUAL
+      hosts:
+        - "*"
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: bookinfo-service
+spec:
+  hosts:
+    - "*"
+  gateways:
+    - bookinfo-gateway
+    - bookinfo-gateway-mtls
+  http:
+    - match:
+        - uri:
+            exact: /productpage
+        - uri:
+            prefix: /static
+        - uri:
+            exact: /login
+        - uri:
+            exact: /logout
+        - uri:
+            prefix: /api/v1/products
+      route:
+        - destination:
+            host: productpage.default.svc.cluster.local
+            port:
+              number: 9080
+---
+apiVersion: "networking.istio.io/v1alpha3"
+kind: "DestinationRule"
+metadata:
+  name: "enable-mtls"
+spec:
+  host: "*.svc.cluster.local"
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL

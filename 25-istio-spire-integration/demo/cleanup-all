@@ -1,0 +1,7 @@
+#!/bin/bash
+
+(cd bookinfo ; ./cleanup-bookinfo)
+(cd istio ; ./cleanup-istio)
+(cd spire ; ./cleanup-spire)
+
+./kill-forward-process

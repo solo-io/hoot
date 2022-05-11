@@ -1,0 +1,11 @@
+#!/bin/bash
+
+
+if [[ -z $1 ]]; then
+    echo "Error: please specify registration entry ID"
+    exit 1;
+fi
+
+kubectl exec --stdin --tty -n spire spire-server-0  -- /opt/spire/bin/spire-server entry delete \
+      -socketPath /run/spire/sockets/server.sock \
+      -entryID $1

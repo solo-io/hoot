@@ -1,0 +1,4 @@
+#!/bin/bash
+
+istioctl x uninstall --purge --skip-confirmation
+kubectl delete namespaces istio-system

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Show SPIRE registration entries
+kubectl exec --stdin --tty -n spire spire-server-0  -- /opt/spire/bin/spire-server entry show -socketPath /run/spire/sockets/server.sock

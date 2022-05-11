@@ -1,0 +1,7 @@
+#!/bin/bash
+
+kubectl create ns istio-system
+sleep 2
+
+./istioctl install -f istio/istio-config.yaml --skip-confirmation
+kubectl apply -f istio/auth.yaml

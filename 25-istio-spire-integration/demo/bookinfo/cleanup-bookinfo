@@ -1,0 +1,34 @@
+#!/bin/bash
+
+SCRIPTDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+NAMESPACE=default
+
+protos=( destinationrules virtualservices gateways )
+for proto in "${protos[@]}"; do
+  for resource in $(kubectl get -n ${NAMESPACE} "$proto" -o name); do
+    kubectl delete -n ${NAMESPACE} "$resource";
+  done
+done
+
+OUTPUT=$(mktemp)
+export OUTPUT
+kubectl delete -n ${NAMESPACE} -f "$SCRIPTDIR/bookinfo.yaml" > "${OUTPUT}" 2>&1
+ret=$?
+function cleanup() {
+  rm -f "${OUTPUT}"
+}
+
+trap cleanup EXIT
+
+if [[ ${ret} -eq 0 ]];then
+  cat "${OUTPUT}"
+else
+  OUT2=$(grep -v NotFound "${OUTPUT}")
+  if [[ -n ${OUT2} ]];then
+    cat "${OUTPUT}"
+    exit ${ret}
+  fi
+fi
+
+echo "Application cleanup successful"

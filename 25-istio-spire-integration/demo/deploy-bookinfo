@@ -1,0 +1,4 @@
+#!/bin/bash
+
+./istioctl kube-inject --filename bookinfo/bookinfo.yaml | kubectl apply -f -
+kubectl apply -f bookinfo/gateway.yaml
