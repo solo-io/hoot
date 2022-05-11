@@ -6,11 +6,10 @@ We understand it is important for you to learn Envoy, Istio, Kubernetes, eBPF an
 
 [View Episode Calendar](https://calendar.google.com/calendar/embed?src=c_lnbos22onj2mi70gjf3r6211l0%40group.calendar.google.com&ctz=America%2FDenver) | [Add Google Calendar](https://calendar.google.com/calendar/u/0?cid=Y19sbmJvczIyb25qMm1pNzBnamYzcjYyMTFsMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t)
 
-Episode 26 Declarative Kubernetes Lifecycle Management Across Multi-Clusters/Clouds 
-with Cluster API: https://www.youtube.com/watch?v=fKeqbkGiHog
-- 1pm ET, 10am PT on May 10, 2022.
-
 ** no hoot livestream on May 17, 2022 due to SMC EU **
+
+Episode 27 TBD
+- 1pm ET, 10am PT on May 24, 2022.
 
 ## Suggest a topic
 Please [open an issue](https://github.com/solo-io/hoot/issues) if you have an idea for a topic we should cover or a guest we should invite.
@@ -46,3 +45,5 @@ Videos:
 - Episode 23 HOW to increase application resiliency for Kubernetes services running on Spot VMs https://www.youtube.com/watch?v=WIcWekCQTJU
 - Episode 24 Debug Envoy Configs and Analyze Access Logs https://www.youtube.com/watch?v=OQFFIXFeZns
 - Episode 25 Istio + Spire + VM: https://www.youtube.com/watch?v=WOPoNqfrhb4
+- Episode 26 Declarative Kubernetes Lifecycle Management Across Multi-Clusters/Clouds 
+with Cluster API: https://www.youtube.com/watch?v=fKeqbkGiHog
