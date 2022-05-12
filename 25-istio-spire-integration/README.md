@@ -5,14 +5,14 @@
 
 [show notes](SHOWNOTES.md)
 
-[slides]()
+[slides](slides/istio-spire-slides.pdf)
 
 ## Hands-on: Steps from the demo
 
 ### Requirements
 
 A kubernetes cluster running with [kubectl](https://kind.sigs.k8s.io/) configured. 
-(The easiest way to run a kubernetes cluster is [kind](https://kind.sigs.k8s.io/)).
+(The easiest way to run a kubernetes cluster is [kind](https://kind.sigs.k8s.io/)). The steps below are tested using k8s v1.23.4.
 
 ### Steps
 
