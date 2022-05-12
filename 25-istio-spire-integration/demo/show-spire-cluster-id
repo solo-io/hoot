@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Look into the SPIRE Agent logs for the demo-cluster id
+
+agentpod="$(kubectl get pods --selector=app=spire-agent -n spire -o jsonpath='{.items[0].metadata.name}')"
+kubectl logs $agentpod -n spire -c spire-agent |grep demo-cluster
