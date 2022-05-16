@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Script to create SPIRE registration entry for bookinfo-details service identity
+
+if [[ -z $1 ]]; then
+    echo "Error: cluster id should be provided as parameter"
+    exit 1;
+fi
+
+kubectl exec -ti spire-server-0 -n spire -c spire-server -- /opt/spire/bin/spire-server entry create \
+          -socketPath /run/spire/sockets/server.sock \
+          -spiffeID spiffe://example.org/ns/default/sa/bookinfo-details \
+          -parentID spiffe://example.org/spire/agent/k8s_psat/demo-cluster/$1 \
+          -selector k8s:ns:default \
+          -selector k8s:sa:bookinfo-details \
+          -selector unix:uid:1337 \
+          -selector k8s:pod-label:app:details \
+          -selector k8s:pod-image:docker.io/istio/examples-bookinfo-details-v1@sha256:18e54f81689035019e1ac78f6d2e6483fcf1d94072d047315ab193cb2ab89ae5

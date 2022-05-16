@@ -169,6 +169,18 @@ Reload the product page in the browser. Now the details section should display a
 Strict mTLS is enabled, thus if one service cannot get its identity, it will not able to communicate
 with any other service in the mesh.
 
+#### Make it work again
+
+Recreate the registration entry for the `bookinfo-details` service identity, passing the cluster ID:
+
+```
+./create-registration-entry-details 1cd8f089-f9cc-46ca-9196-64e6a9a40271
+```
+
+Wait a few seconds for the certificates to be delivered to the `bookinfo-details` Envoy proxy (you should see a `READY 2/2` on the pod status).
+
+Reload the `bookinfo` page on the browser. There should be no errors.
+
 ### Cleanup
 
 ```
