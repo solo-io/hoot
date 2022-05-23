@@ -6,9 +6,7 @@ We understand it is important for you to learn Envoy, Istio, Kubernetes, eBPF an
 
 [View Episode Calendar](https://calendar.google.com/calendar/embed?src=c_lnbos22onj2mi70gjf3r6211l0%40group.calendar.google.com&ctz=America%2FDenver) | [Add Google Calendar](https://calendar.google.com/calendar/u/0?cid=Y19sbmJvczIyb25qMm1pNzBnamYzcjYyMTFsMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t)
 
-** no hoot livestream on May 17, 2022 due to SMC EU **
-
-Episode 27 TBD
+Episode 27 Gloo Cilium and Istio Seamlessly Together: https://www.youtube.com/watch?v=bAjAJtQioPU
 - 1pm ET, 10am PT on May 24, 2022.
 
 ## Suggest a topic
