@@ -5,7 +5,8 @@
 
 [show notes](SHOWNOTES.md)
 
-[slides]()
+[slides](hoot-capi.pdf)
 
 ## Hands-on: Steps from the demo
 
+Please refer to this official quick start guide for [Cluster API](https://cluster-api.sigs.k8s.io/user/quick-start.html)
