@@ -11,6 +11,8 @@ Episode 28 What is new in Istio 1.14?:  https://www.youtube.com/watch?v=XxMAjo8y
 
 Episode 29 Porting eBPF applications to BumbleBee: https://www.youtube.com/watch?v=NQcOQ1-sJII
 
+No hoot livestream on 6/21 or 6/28.
+
 ## Suggest a topic
 Please [open an issue](https://github.com/solo-io/hoot/issues) if you have an idea for a topic we should cover or a guest we should invite.
 ## Previous episodes
