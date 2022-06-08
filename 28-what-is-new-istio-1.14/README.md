@@ -156,3 +156,51 @@ kubectl delete -f ~/Downloads/istio-1.14.0/samples/sleep/sleep.yaml -n foo
 kubectl delete ns foo
 ```
 
+### Steps for Faseela's demo 1 - workloadSelector and credentialName in DR
+
+Follow Istio doc:
+https://istio.io/latest/docs/tasks/traffic-management/egress/egress-tls-origination/#mutual-tls-origination-for-egress-traffic
+This document has all required configuration for workloadSelector and credentialName support in DR.
+
+
+### Steps for Faseela's demo 2 - auto-sni support
+
+Enable auto_sni experimental feature
+
+```
+# kubectl exec -n istio-system -it istiod-cc6987bb6-25kbj -- env | grep ENABLE_AUTO_SNI
+ENABLE_AUTO_SNI=true
+```
+
+Configure DestinationRule with auto_sni enabled
+
+Follow Istio doc:
+https://istio.io/latest/docs/tasks/traffic-management/egress/egress-tls-origination/#mutual-tls-origination-for-egress-traffic
+with the only difference of removing sni in DestinationRule configuration.
+
+Refer sni section of ClientTLSSettings at https://istio.io/latest/docs/reference/config/networking/destination-rule/#ClientTLSSettings
+for further details. The updated DR will look something like below:
+
+```
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  name: first-destination-rule
+spec:
+  workloadSelector:
+    matchLabels:
+      app: sleep
+  exportTo:
+  - .
+  host: my-nginx.mesh-external.svc.cluster.local
+  trafficPolicy:
+    loadBalancer:
+      simple: ROUND_ROBIN
+    portLevelSettings:
+    - port:
+        number: 31443
+      tls:
+        credentialName: client-credential
+        mode: MUTUAL
+        # no sni here
+```
