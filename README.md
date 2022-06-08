@@ -6,9 +6,6 @@ We understand it is important for you to learn Envoy, Istio, Kubernetes, eBPF an
 
 [View Episode Calendar](https://calendar.google.com/calendar/embed?src=c_lnbos22onj2mi70gjf3r6211l0%40group.calendar.google.com&ctz=America%2FDenver) | [Add Google Calendar](https://calendar.google.com/calendar/u/0?cid=Y19sbmJvczIyb25qMm1pNzBnamYzcjYyMTFsMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t)
 
-Episode 28 What is new in Istio 1.14?:  https://www.youtube.com/watch?v=XxMAjo8yrLI
-- 1pm ET, 10am PT on June 7, 2022.
-
 Episode 29 Porting eBPF applications to BumbleBee: https://www.youtube.com/watch?v=NQcOQ1-sJII
 
 No hoot livestream on 6/21 or 6/28.
@@ -50,3 +47,4 @@ Videos:
 - Episode 26 Declarative Kubernetes Lifecycle Management Across Multi-Clusters/Clouds 
 with Cluster API: https://www.youtube.com/watch?v=fKeqbkGiHog
 - Episode 27 Gloo Cilium and Istio Seamlessly Together: https://www.youtube.com/watch?v=bAjAJtQioPU
+- Episode 28 What is new in Istio 1.14?:  https://www.youtube.com/watch?v=XxMAjo8yrLI
