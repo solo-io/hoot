@@ -1,57 +1,60 @@
-# Hoot Episode 27, May 24, 2022
-Gloo Cilium and Istio Seamlessly Together
+# Hoot Episode 28, June 7, 2022
+What is new in Istio 1.14
 
 1 min hook to today's hoot.
-Network policy are highly recommended along with L7 security policies based on Istio's security best practice doc. These resources are vastly different, how can we make this easier for our users? Welcome to hoot livestream episode 27, today we will discuss Cilium and Istio Seamlessly Together. I'm your host and look forward to learning this topic with you together.
-
-**News (2 mins)**
-Solo.io adds Cilium to Gloo Mesh:
-https://www.devopsdigest.com/soloio-adds-cilium-to-gloo-mesh
-
-https://www.solo.io/blog/enabling-cilium-gloo-application-networking-platform/
-
-CNCF survey on SM: https://www.cncf.io/wp-content/uploads/2022/05/CNCF_Service_Mesh_MicroSurvey_Final.pdf
-
-Envoy gateway: https://blog.envoyproxy.io/introducing-envoy-gateway-ad385cc59532
-
-https://isovalent.com/blog/post/2022-05-16-tetragon
-
-https://techcrunch.com/2022/05/18/apollo-graphql-launches-its-supergraph/
-
-hoot update: 
-Spire+Istio demo scripts are provided!
+Istio just turned 5 and the community released 1.14.  Wanna to know what is new with the release?  Today, I am so excited to discuss the Istio 1.14 release with Faseela!
 
 **speaker intro** (2 mins)
 speakers: intro
 
+**News (2 mins)**
+
+Istio 1.14 is out, thank RM & community!
+
+Broadcom aquired VMware:
+https://investors.broadcom.com/news-releases/news-release-details/broadcom-acquire-vmware-approximately-61-billion-cash-and-stock
+
+IstioCon recap: https://www.youtube.com/watch?v=PyXxLXJRMoU
+
+hoot update: https://github.com/solo-io/hoot/#upcoming-episodes
+
+Cilium workshop: https://app.livestorm.co/solo-io/introduction-to-ebpf-and-cilium-amer-060922
+
 General Questions (20 mins)
 
-what is cilium?
-- L3, IP based
-- CNI, best CNI out there?
+what is your contribution experience to Istio?
 
-Can you describe Cilium's security model?
+Discuss istio 1.14, Pull out release blog, release note and upgrade note
 
-what are issues with network identity?
-- overlapping IPs
-- Does label help here?
+Discuss upgrade:
 
-How does network based identity work with multicluster?
-- Is flat network required?
-- access to k8s API server across multiclusters
-https://docs.cilium.io/en/stable/gettingstarted/clustermesh/clustermesh/#limitations
+- First minor release without any upgrade caveat.
+- Kubernetes warning of removal of deprecated APIs. https://kubernetes.io/blog/2021/07/14/upcoming-changes-in-kubernetes-1-22/#api-changes.  Istio prior to 1.10 won't work with k8s 1.22 or newer.
 
-Thoughts on how cilium and Istio be integrated together? Why would someone wants to use one or the other or both?
+Discuss highlights of releases
+- Spire: refer to episode 26
+- Faseela: auto SNI
+- Lin: min TLS version: https://preliminary.istio.io/latest/docs/tasks/security/tls-configuration/workload-min-tls-version/
+-- Q: does it work for gateway?
+- Lin: Telemetry API improvement
 
-Why Cilium and Istio with Gloo mesh?
+Other features of releases that are interesting?
+- Faseela?
+-- workload selector for DestinationRule
+-- credential name support for sidecar egress TLS origination
+- Lin?
+-- PILOT_SEND_UNHEALTHY_ENDPOINTS
+-- ProxyConfig - envoy runtime values: https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/operations/runtime
+-- always disable protocol sniffing in production: **Fixed** an issue causing traffic from a gateway to a service with an [undeclared protocol]
+-- Istio's default load balancing algorithm from `ROUND_ROBIN` to `LEAST_REQUEST`
+-- **Added** support for WasmPlugin pulling image from private repository with `imagePullSecret`.
+-- **Added** support of installing gateway helm chart as `daemonset`.
+  ([Issue #37610](https://github.com/istio/istio/issues/37610))
+-- anything interesting from istioctl?
 
-Gloo mesh has workspaces which provides multi-tenancy to different teams, are we also bringing tenancy to Cilium?
-
-Can I use Gloo network for Cilium without Istio?
-
-**Let us dive into demo** (5-10 mins)
-
-Any demo you want to show?
+**Let us dive into demo** (10-15 mins)
+- Faseela: auto SNI etc
+- Lin: upgrade to 1.14, min TLS, and telemetry API improvement
 
 
 **wrap up** (2 mins)
