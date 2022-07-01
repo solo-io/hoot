@@ -1,14 +1,13 @@
 ![Hoot Image](images/hoot-background.png)
 # Hoot - Learn Kubernetes, Envoy, Istio, eBPF and GraphQL
-We understand it is important for you to learn Envoy, Istio, Kubernetes, eBPF and GraohQL as part of your journey to cloud native so you can make sense of any technology or architecture decision. Hoot is designed to help you learn these technologies so you can be well prepared at your job!
+We understand it is important for you to learn Envoy, Istio, Kubernetes, eBPF and GraphQL as part of your journey to cloud native so you can make sense of any technology or architecture decision. Hoot is designed to help you learn these technologies so you can be well prepared at your job!
 
 ## Upcoming episodes
 
 [View Episode Calendar](https://calendar.google.com/calendar/embed?src=c_lnbos22onj2mi70gjf3r6211l0%40group.calendar.google.com&ctz=America%2FDenver) | [Add Google Calendar](https://calendar.google.com/calendar/u/0?cid=Y19sbmJvczIyb25qMm1pNzBnamYzcjYyMTFsMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t)
 
-Episode 29 Porting eBPF applications to BumbleBee: https://www.youtube.com/watch?v=NQcOQ1-sJII
-
-No hoot livestream on 6/21 or 6/28.
+July 5, 2022 at 7am PT, 10am ET:
+Episode 30 HTTP/3 With Envoy Explained: https://www.youtube.com/watch?v=TjaJ5oMxNpc 
 
 ## Suggest a topic
 Please [open an issue](https://github.com/solo-io/hoot/issues) if you have an idea for a topic we should cover or a guest we should invite.
@@ -48,3 +47,5 @@ Videos:
 with Cluster API: https://www.youtube.com/watch?v=fKeqbkGiHog
 - Episode 27 Gloo Cilium and Istio Seamlessly Together: https://www.youtube.com/watch?v=bAjAJtQioPU
 - Episode 28 What is new in Istio 1.14?:  https://www.youtube.com/watch?v=XxMAjo8yrLI
+- Episode 29 Porting eBPF applications to BumbleBee: https://www.youtube.com/watch?v=NQcOQ1-sJII
+
