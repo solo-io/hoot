@@ -7,7 +7,7 @@ We understand it is important for you to learn Envoy, Istio, Kubernetes, eBPF an
 [View Episode Calendar](https://calendar.google.com/calendar/embed?src=c_lnbos22onj2mi70gjf3r6211l0%40group.calendar.google.com&ctz=America%2FDenver) | [Add Google Calendar](https://calendar.google.com/calendar/u/0?cid=Y19sbmJvczIyb25qMm1pNzBnamYzcjYyMTFsMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t)
 
 July 12, 2022 at 10am PT, 1pm ET:
-TBD
+Episode 31: Cilium L7 Policies vs Istio’s -  https://youtu.be/d4mEnVZKum8 
 
 ## Suggest a topic
 Please [open an issue](https://github.com/solo-io/hoot/issues) if you have an idea for a topic we should cover or a guest we should invite.
