@@ -31,16 +31,6 @@ spec:
       labels:
         app: notsleep
     spec:
-      affinity:
-        podAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            - labelSelector:
-                matchExpressions:
-                  - key: version
-                    operator: In
-                    values:
-                      - v2
-              topologyKey: kubernetes.io/hostname
       terminationGracePeriodSeconds: 0
       serviceAccountName: notsleep
       containers:

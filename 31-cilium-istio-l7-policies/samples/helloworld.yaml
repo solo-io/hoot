@@ -66,16 +66,6 @@ spec:
         app: helloworld
         version: v1
     spec:
-      affinity:
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            - labelSelector:
-                matchExpressions:
-                  - key: version
-                    operator: In
-                    values:
-                      - v2
-              topologyKey: kubernetes.io/hostname
       serviceAccountName: helloworld              
       containers:
       - name: helloworld
@@ -103,16 +93,6 @@ spec:
         app: helloworld
         version: v2
     spec:
-      affinity:
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            - labelSelector:
-                matchExpressions:
-                  - key: version
-                    operator: In
-                    values:
-                      - v1
-              topologyKey: kubernetes.io/hostname
       serviceAccountName: helloworld
       containers:
       - name: helloworld
