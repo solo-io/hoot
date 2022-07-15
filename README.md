@@ -6,8 +6,8 @@ We understand it is important for you to learn Envoy, Istio, Kubernetes, eBPF an
 
 [View Episode Calendar](https://calendar.google.com/calendar/embed?src=c_lnbos22onj2mi70gjf3r6211l0%40group.calendar.google.com&ctz=America%2FDenver) | [Add Google Calendar](https://calendar.google.com/calendar/u/0?cid=Y19sbmJvczIyb25qMm1pNzBnamYzcjYyMTFsMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t)
 
-July 12, 2022 at 10am PT, 1pm ET:
-Episode 31: Cilium L7 Policies vs Istio’s -  https://youtu.be/d4mEnVZKum8 
+July 19, 2022 at 10am PT, 1pm ET:
+Episode 32: GraphQL for Developers or Platform Team? - https://youtu.be/cFcIb1mh998 
 
 ## Suggest a topic
 Please [open an issue](https://github.com/solo-io/hoot/issues) if you have an idea for a topic we should cover or a guest we should invite.
@@ -48,4 +48,5 @@ with Cluster API: https://www.youtube.com/watch?v=fKeqbkGiHog
 - Episode 27 Gloo Cilium and Istio Seamlessly Together: https://www.youtube.com/watch?v=bAjAJtQioPU
 - Episode 28 What is new in Istio 1.14?:  https://www.youtube.com/watch?v=XxMAjo8yrLI
 - Episode 29 Porting eBPF applications to BumbleBee: https://www.youtube.com/watch?v=NQcOQ1-sJII
-- Episode 30 HTTP/3 With Envoy Explained: https://www.youtube.com/watch?v=TjaJ5oMxNpc 
+- Episode 30 HTTP/3 With Envoy Explained: https://www.youtube.com/watch?v=TjaJ5oMxNpc
+- Episode 31: Cilium L7 Policies vs Istio’s -  https://youtu.be/d4mEnVZKum8
