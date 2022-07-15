@@ -1,4 +1,4 @@
-# Hoot Episode 30 - HTTP/3 With Envoy Explained
+# Hoot Episode 31 - Cilium L7 Policies vs Istio's
 
 ## Recording ##
  https://youtu.be/d4mEnVZKum8
