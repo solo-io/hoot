@@ -9,7 +9,7 @@
 
 ### Cilium Demo
 
-Setup Cilium CNI based on latest stable doc.  Check status:
+Setup [Cilium CNI based on latest stable doc](https://docs.cilium.io/en/stable/gettingstarted/k8s-install-default/).  Check status:
 
 ```console
 cilium status --wait
