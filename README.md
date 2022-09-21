@@ -6,7 +6,7 @@ We understand it is important for you to learn Envoy, Istio, Kubernetes, eBPF an
 
 [View Episode Calendar](https://calendar.google.com/calendar/embed?src=c_lnbos22onj2mi70gjf3r6211l0%40group.calendar.google.com&ctz=America%2FDenver) | [Add Google Calendar](https://calendar.google.com/calendar/u/0?cid=Y19sbmJvczIyb25qMm1pNzBnamYzcjYyMTFsMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t)
 
-Aug 30, 2022 at 10am PT, 1pm ET: TBD
+Sept 26, 2022 at 10am PT, 1pm ET: Ambient and Gloo Mesh
 
 
 ## Suggest a topic
@@ -52,5 +52,8 @@ with Cluster API: https://www.youtube.com/watch?v=fKeqbkGiHog
 - Episode 31: Cilium L7 Policies vs Istio’s -  https://youtu.be/d4mEnVZKum8
 - Episode 32: GraphQL for Developers or Platform Team? - https://youtu.be/cFcIb1mh998
 - Episode 33: Speed your Istio development environment with vcluster - https://youtu.be/b7OkYjvLf4Y
-- Episode 34: Optional Sidecar? A Tour of Cilium Service Mesh: https://t.co/2ZtJ40wFdw
-
+- Episode 34: Optional Sidecar? A Tour of Cilium Service Mesh - https://t.co/2ZtJ40wFdw
+- Episode 35: Successes? Lessons? Istio @ Quizlet - https://www.youtube.com/watch?v=ESIG-ZQ4j-I
+- Episode 36: Istio ambient, what does it mean to you? - https://www.youtube.com/watch?v=fCX6hkj_xeQ
+- EPisode 37: Common Questions for Istio Ambient - https://www.youtube.com/watch?v=aXGwaSV1K1s
+- Episode 38: What Istio ambient means for your wallet - https://www.youtube.com/watch?v=nQtN0BJZ8lw
