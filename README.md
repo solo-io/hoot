@@ -6,7 +6,7 @@ We understand it is important for you to learn Envoy, Istio, Kubernetes, eBPF an
 
 [View Episode Calendar](https://calendar.google.com/calendar/embed?src=c_lnbos22onj2mi70gjf3r6211l0%40group.calendar.google.com&ctz=America%2FDenver) | [Add Google Calendar](https://calendar.google.com/calendar/u/0?cid=Y19sbmJvczIyb25qMm1pNzBnamYzcjYyMTFsMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t)
 
-Sept 26, 2022 at 10am PT, 1pm ET: Ambient and Gloo Mesh
+Sept 27, 2022 at 10am PT, 1pm ET: Ambient and Gloo Mesh
 
 
 ## Suggest a topic
