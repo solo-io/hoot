@@ -6,7 +6,6 @@ We understand it is important for you to learn Envoy, Istio, Kubernetes, eBPF an
 
 [View Episode Calendar](https://calendar.google.com/calendar/embed?src=c_lnbos22onj2mi70gjf3r6211l0%40group.calendar.google.com) | [Add Google Calendar](https://calendar.google.com/calendar/u/0?cid=Y19sbmJvczIyb25qMm1pNzBnamYzcjYyMTFsMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t)
 
-Sept 27, 2022 at 10am PT, 1pm ET: Ambient and Gloo Mesh
 
 
 ## Suggest a topic
@@ -57,3 +56,4 @@ with Cluster API: https://www.youtube.com/watch?v=fKeqbkGiHog
 - Episode 36: Istio ambient, what does it mean to you? - https://www.youtube.com/watch?v=fCX6hkj_xeQ
 - EPisode 37: Common Questions for Istio Ambient - https://www.youtube.com/watch?v=aXGwaSV1K1s
 - Episode 38: What Istio ambient means for your wallet - https://www.youtube.com/watch?v=nQtN0BJZ8lw
+- Episode 39: Ambient and Gloo Mesh - https://www.youtube.com/watch?v=vxy-yqarirY
