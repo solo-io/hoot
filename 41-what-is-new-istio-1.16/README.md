@@ -53,6 +53,12 @@ Query all pods that have the new tunnel label configured:
 kubectl get po -lnetworking.istio.io/tunnel=http -A
 ```
 
+Call helloworld from sleep:
+
+```
+kubectl exec -it $(k get po -lapp=sleep -ojsonpath='{.items[0].metadata.name}') -- curl helloworld:5000/hello
+```
+
 ### Steps for Lin's demo 2 - Discovery selectors
 
 Create the configuration to enable the new discovery selectors features:

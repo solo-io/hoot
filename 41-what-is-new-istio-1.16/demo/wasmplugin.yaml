@@ -1,0 +1,18 @@
+apiVersion: extensions.istio.io/v1alpha1
+kind: WasmPlugin
+metadata:
+  name: httpbin-rust-test
+  namespace: httpbin
+spec:
+  selector:
+    matchLabels:
+      app: httpbin
+  # Define traffic selector match conditions
+  # All conditions must evaluate to true for the plugin to be applied
+  match:
+    # Define the workload mode, valid options are: SERVER, CLIENT, CLIENT_AND_SERVER
+    - mode: SERVER
+    # Define port numbers to match. If not specified, all ports are matched
+    - ports:
+      - number: 80
+  url: oci://docker.io/dhawton/wasm-rust-test:v1
