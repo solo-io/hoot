@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-use log::{info, debug, trace};
+use log::{info, trace};
 use proxy_wasm as wasm;
 use wasm::{types::Action, types::ContextType};
 
@@ -46,7 +46,7 @@ impl wasm::traits::RootContext for RustTest {
     }
 }
 
-const TEAPOT_ASCII = b"I'm a teapot
+const TEAPOT_ASCII: &[u8; 295] = b"I'm a teapot
 
                        (
             _           ) )
@@ -69,9 +69,6 @@ impl wasm::traits::HttpContext for HttpHeaders {
         for (name, value) in &self.get_http_request_headers() {
             trace!("#{} - {} = {}", self.context_id, name, value);
         }
-
-        const path = self.get_http_request_header(":path");
-        const method = self.get_http_request_header(":method");
 
         match self.get_http_request_header(":path") {
             Some(path) if path == "/get" => {
