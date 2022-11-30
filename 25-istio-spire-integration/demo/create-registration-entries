@@ -16,7 +16,7 @@ kubectl exec -ti spire-server-0 -n spire -c spire-server -- /opt/spire/bin/spire
           -selector k8s:sa:bookinfo-details \
           -selector unix:uid:1337 \
           -selector k8s:pod-label:app:details \
-          -selector k8s:pod-image:docker.io/istio/examples-bookinfo-details-v1@sha256:18e54f81689035019e1ac78f6d2e6483fcf1d94072d047315ab193cb2ab89ae5
+          -selector k8s:pod-image:docker.io/istio/examples-bookinfo-details-v1:1.16.2
 
 # bookinfo ratings
 kubectl exec -ti spire-server-0 -n spire -c spire-server -- /opt/spire/bin/spire-server entry create \
@@ -26,7 +26,7 @@ kubectl exec -ti spire-server-0 -n spire -c spire-server -- /opt/spire/bin/spire
           -selector k8s:ns:default \
           -selector k8s:sa:bookinfo-ratings \
           -selector unix:uid:1337 \
-          -selector k8s:pod-image:docker.io/istio/examples-bookinfo-ratings-v1@sha256:5fbfd3a14fff229f15e689d07e5214bc5eb1e929766e45eda761cbc9ef7a5589
+          -selector k8s:pod-image:docker.io/istio/examples-bookinfo-ratings-v1:1.16.2
 
 # bookinfo reviews
 kubectl exec -ti spire-server-0 -n spire -c spire-server -- /opt/spire/bin/spire-server entry create \
@@ -47,7 +47,7 @@ kubectl exec -ti spire-server-0 -n spire -c spire-server -- /opt/spire/bin/spire
           -selector k8s:sa:bookinfo-productpage \
           -selector unix:uid:1337 \
           -selector k8s:pod-label:app:productpage \
-          -selector k8s:pod-image:docker.io/istio/examples-bookinfo-productpage-v1@sha256:63ac3b4fb6c3ba395f5d044b0e10bae513afb34b9b7d862b3a7c3de7e0686667
+          -selector k8s:pod-image:docker.io/istio/examples-bookinfo-productpage-v1:1.16.2
 
 # istio ingress-gateway
 kubectl exec -ti spire-server-0 -n spire -c spire-server -- /opt/spire/bin/spire-server entry create \

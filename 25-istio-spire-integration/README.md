@@ -30,7 +30,7 @@ Verify that is working:
 ./istioctl version
 ```
 
-The output should show `1.14.0-alpha.0`.
+The output should show `1.15.0`.
 
 2. Deploy SPIRE to cluster
 
@@ -79,7 +79,7 @@ Parent ID        : spiffe://example.org/spire/agent/k8s_psat/demo-cluster/1cd8f0
 Revision         : 0
 TTL              : default
 Selector         : k8s:ns:default
-Selector         : k8s:pod-image:docker.io/istio/examples-bookinfo-details-v1@sha256:18e54f81689035019e1ac78f6d2e6483fcf1d94072d047315ab193cb2ab89ae5
+Selector         : k8s:pod-image:docker.io/istio/examples-bookinfo-details-v1:1.16.2
 Selector         : k8s:pod-label:app:details
 Selector         : k8s:sa:bookinfo-details
 Selector         : unix:uid:1337
