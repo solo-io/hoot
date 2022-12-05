@@ -26,7 +26,7 @@ while true; do hey -n 100 -c 5 -t 1  http://localhost:10000/ ; sleep 1;done
 ```
 
 Red server returns response code 200,
-Blue server returns resonse code 201.
+Blue server returns response code 201.
 
 # Self-demo
 
