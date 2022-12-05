@@ -1,27 +1,38 @@
 # Setup
 
+## Install Dependencies
+Install [Envoy](https://www.envoyproxy.io/docs/envoy/latest/start/install) using version 1.24
+```
+envoy --version
+```
+
+## Envoy Terminal
 In the background, start:
 ```
 go run server.go&
 envoy -c xds.yaml
 ```
 
-## terminal1:
+## XDS Terminal:
+Change into the xDS package:
+```
+cd xds
+```
 Start XDS server:
 ```
-(cd xds; go run xds.go)
+go run xds.go
 ```
 
 This server demonstrates dynamic configuration using traffic shifting based on user input. You can also test how envoy behaves when given invalid configuration, by providing input that is out of range.
 
-## terminal 2:
+## Request Terminal:
 generate traffic, and see stats:
 ```
-while true; do hey -n 100 http://localhost:10000/ ; sleep 1;done
+while true; do hey -n 100 -c 5 -t 1  http://localhost:10000/ ; sleep 1;done
 ```
 
-Red server returns repsonse code 200,
-Blue server returns repsonse code 201.
+Red server returns response code 200,
+Blue server returns response code 201.
 
 # Self-demo
 

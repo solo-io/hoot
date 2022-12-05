@@ -7,6 +7,14 @@ admin:
   address:
     socket_address: { address: 127.0.0.1, port_value: 9901 }
 
+layered_runtime:
+  # use runtime to limit number of connections to prevent file descriptor exhaustion
+  layers:
+    - name: static_layer_0
+      static_layer:
+        overload:
+          global_downstream_max_connections: 100
+
 dynamic_resources:
   ads_config:
     # allows limiting the rate of discovery requests.
