@@ -11,6 +11,8 @@ import (
 	"strings"
 	"time"
 
+	any2 "github.com/golang/protobuf/ptypes/any"
+
 	"github.com/golang/protobuf/ptypes"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
@@ -198,6 +200,11 @@ func makeHTTPListener(listenerName string, route string) *listener.Listener {
 		},
 		HttpFilters: []*hcm.HttpFilter{{
 			Name: wellknown.Router,
+			ConfigType: &hcm.HttpFilter_TypedConfig{
+				TypedConfig: &any2.Any{
+					TypeUrl: "type.googleapis.com/envoy.extensions.filters.http.router.v3.Router",
+				},
+			},
 		}},
 	}
 	pbst, err := ptypes.MarshalAny(manager)
