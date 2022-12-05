@@ -1,5 +1,11 @@
 # Setup
 
+## Install Dependencies
+Install [Envoy](https://www.envoyproxy.io/docs/envoy/latest/start/install) using version 1.24
+```
+envoy --version
+```
+
 ## Envoy Terminal
 In the background, start:
 ```
