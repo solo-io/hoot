@@ -251,18 +251,27 @@ var (
 	version int
 )
 
-func GenerateSnapshot(weight uint32) cachev3.Snapshot {
+func GenerateSnapshot(weight uint32) (*cachev3.Snapshot, error) {
 	version++
 	nextversion := fmt.Sprintf("snapshot-%d", version)
 	fmt.Println("publishing version: ", nextversion)
 	return cachev3.NewSnapshot(
-		nextversion,        // version needs to be different for different snapshots
-		[]types.Resource{}, // endpoints
-		[]types.Resource{makeCluster(ClusterName1), makeCluster(ClusterName2)},
-		[]types.Resource{makeRoute(RouteName, weight, ClusterName1, ClusterName2)},
-		[]types.Resource{makeHTTPListener(ListenerName, RouteName)},
-		[]types.Resource{}, // runtimes
-		[]types.Resource{}, // secrets
+		nextversion, // version needs to be different for different snapshots
+		map[resource.Type][]types.Resource{
+			resource.EndpointType: {},
+			resource.ClusterType: {
+				makeCluster(ClusterName1),
+				makeCluster(ClusterName2),
+			},
+			resource.RouteType: {
+				makeRoute(RouteName, weight, ClusterName1, ClusterName2),
+			},
+			resource.ListenerType: {
+				makeHTTPListener(ListenerName, RouteName),
+			},
+			resource.RuntimeType: {},
+			resource.SecretType:  {},
+		},
 	)
 }
 
@@ -311,6 +320,8 @@ func (ClusterNodeHasher) ID(node *core.Node) string {
 }
 
 func main() {
+	ctx := context.Background()
+
 	logger, _ := zap.NewProduction()
 	defer logger.Sync() // flushes buffer, if any
 	l := logger.Sugar()
@@ -321,7 +332,11 @@ func main() {
 	cache := cachev3.NewSnapshotCache(false, ClusterNodeHasher{}, l)
 
 	// Create the snapshot that we'll serve to Envoy
-	snapshot := GenerateSnapshot(0)
+	snapshot, err := GenerateSnapshot(0)
+	if err != nil {
+		l.Errorf("could not generate snapshot: %+v", err)
+		os.Exit(1)
+	}
 	if err := snapshot.Consistent(); err != nil {
 		l.Errorf("snapshot inconsistency: %+v\n%+v", snapshot, err)
 		os.Exit(1)
@@ -329,13 +344,12 @@ func main() {
 	l.Debugf("will serve snapshot %+v", snapshot)
 
 	// Add the snapshot to the cache
-	if err := cache.SetSnapshot(nodeGroup, snapshot); err != nil {
+	if err := cache.SetSnapshot(ctx, nodeGroup, snapshot); err != nil {
 		l.Errorf("snapshot error %q for %+v", err, snapshot)
 		os.Exit(1)
 	}
 
 	// Run the xDS server
-	ctx := context.Background()
 	cb := &testv3.Callbacks{Debug: true}
 	srv := serverv3.NewServer(ctx, cache, cb)
 	go RunServer(ctx, srv, xdsPort)
@@ -353,7 +367,11 @@ func main() {
 		clampedWeight := clampWeight(weight)
 		fmt.Println("setting weight to", clampedWeight)
 
-		snapshot = GenerateSnapshot(clampedWeight)
+		snapshot, err = GenerateSnapshot(clampedWeight)
+		if err != nil {
+			l.Errorf("could not generate snapshot: %+v", err)
+			os.Exit(1)
+		}
 		if err := snapshot.Consistent(); err != nil {
 			l.Errorf("snapshot inconsistency: %+v\n%+v", snapshot, err)
 			os.Exit(1)
@@ -361,7 +379,7 @@ func main() {
 		l.Debugf("will serve snapshot %+v", snapshot)
 
 		// Add the snapshot to the cache
-		if err := cache.SetSnapshot(nodeGroup, snapshot); err != nil {
+		if err := cache.SetSnapshot(ctx, nodeGroup, snapshot); err != nil {
 			l.Errorf("snapshot error %q for %+v", err, snapshot)
 			os.Exit(1)
 		}
