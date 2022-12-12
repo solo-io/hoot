@@ -6,7 +6,7 @@ We understand it is important for you to learn Envoy, Istio, Kubernetes, eBPF an
 
 [View Episode Calendar](https://calendar.google.com/calendar/embed?src=c_lnbos22onj2mi70gjf3r6211l0%40group.calendar.google.com) | [Add Google Calendar](https://calendar.google.com/calendar/u/0?cid=Y19sbmJvczIyb25qMm1pNzBnamYzcjYyMTFsMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t)
 
-Episode 41: Nov 29, 2022 at 10am PT, 1pm ET: What is NEW in Istio 1.16? https://www.youtube.com/watch?v=hO8PlznWbmI
+Episode 42: Dec 13, 2022 at 10am PT, 1pm ET: Rust-based ztunnel for Istio ambient mesh? https://www.youtube.com/watch?v=nyd_hxCWnds
 
 ## Suggest a topic
 Please [open an issue](https://github.com/solo-io/hoot/issues) if you have an idea for a topic we should cover or a guest we should invite.
@@ -58,4 +58,6 @@ with Cluster API: https://www.youtube.com/watch?v=fKeqbkGiHog
 - Episode 38: What Istio ambient means for your wallet - https://www.youtube.com/watch?v=nQtN0BJZ8lw
 - Episode 39: Ambient and Gloo Mesh - https://www.youtube.com/watch?v=vxy-yqarirY
 - Episode 40: Ask Us Anything about Istio Ambient Explained Book - https://www.youtube.com/watch?v=fyX1PrRaTf4
+- Episode 41: What is NEW in Istio 1.16? - https://www.youtube.com/watch?v=hO8PlznWbmI
+
 
