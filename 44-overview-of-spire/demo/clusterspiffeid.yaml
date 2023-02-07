@@ -1,0 +1,18 @@
+apiVersion: spire.spiffe.io/v1alpha1
+kind: ClusterSPIFFEID
+metadata:
+  name: service-account-spiffeid
+spec:
+  spiffeIDTemplate: "spiffe://{{ .TrustDomain }}/ns/{{ .PodMeta.Namespace }}/sa/{{ .PodSpec.ServiceAccountName }}"
+  dnsNameTemplates: ["{{ .PodMeta.Name }}"]
+
+# OTHER EXAMPLES:
+# apiVersion: spire.spiffe.io/v1alpha1
+# kind: ClusterSPIFFEID
+# metadata:
+#   name: backend-workloads
+# spec:
+#   spiffeIDTemplate: "spiffe://domain.test/ns/{{ .PodMeta.Namespace }}/sa/{{ .PodSpec.ServiceAccountName }}"
+#   podSelector:
+#     matchLabels:
+#       banking: "true"
