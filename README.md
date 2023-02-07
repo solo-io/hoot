@@ -60,4 +60,4 @@ with Cluster API: https://www.youtube.com/watch?v=fKeqbkGiHog
 - Episode 40: Ask Us Anything about Istio Ambient Explained Book - https://www.youtube.com/watch?v=fyX1PrRaTf4
 - Episode 41: What is NEW in Istio 1.16? - https://www.youtube.com/watch?v=hO8PlznWbmI
 - Episode 42: Rust-based ztunnel for Istio ambient mesh? https://www.youtube.com/watch?v=nyd_hxCWnds
-
+- Episode 44: Overview of SPIRE - https://www.youtube.com/watch?v=MuYmhc4mJHI
