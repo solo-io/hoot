@@ -93,3 +93,12 @@ istioctl proxy-config secret $SLEEP_POD -o json | jq -r '.dynamicActiveSecrets[0
 ```shell
 openssl x509 -in sleep.pem -text
 ```
+
+## Additional Resources
+
+- SPIFFE spec - https://github.com/spiffe/spiffe/blob/main/standards/SPIFFE.md 
+- Official SPIFFE docs - https://spiffe.io/docs/latest/spiffe-about/overview/ 
+- SPIRE architecture & components - https://spiffe.io/docs/latest/spire-about/spire-concepts 
+- Scaling SPIRE - https://spiffe.io/docs/latest/planning/scaling_spire 
+- Istio cert management - https://istio.io/latest/docs/concepts/security/#pki 
+- Istio SPIRE integration - https://istio.io/latest/docs/ops/integrations/spire 
