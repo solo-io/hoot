@@ -6,8 +6,6 @@ We understand it is important for you to learn Envoy, Istio, Kubernetes, eBPF an
 
 [View Episode Calendar](https://calendar.google.com/calendar/embed?src=c_lnbos22onj2mi70gjf3r6211l0%40group.calendar.google.com) | [Add Google Calendar](https://calendar.google.com/calendar/u/0?cid=Y19sbmJvczIyb25qMm1pNzBnamYzcjYyMTFsMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t)
 
-Episode 43: Jan 24, 2022 at 10am PT, 1pm ET: Successes? Lessons? Istio @ Virtru https://www.youtube.com/watch?v=NP7JTXlQkI8
-
 ## Suggest a topic
 Please [open an issue](https://github.com/solo-io/hoot/issues) if you have an idea for a topic we should cover or a guest we should invite.
 ## Previous episodes
@@ -60,4 +58,5 @@ with Cluster API: https://www.youtube.com/watch?v=fKeqbkGiHog
 - Episode 40: Ask Us Anything about Istio Ambient Explained Book - https://www.youtube.com/watch?v=fyX1PrRaTf4
 - Episode 41: What is NEW in Istio 1.16? - https://www.youtube.com/watch?v=hO8PlznWbmI
 - Episode 42: Rust-based ztunnel for Istio ambient mesh? https://www.youtube.com/watch?v=nyd_hxCWnds
+- Episode 43: Successes? Lessons? Istio @ Virtru - https://www.youtube.com/watch?v=NP7JTXlQkI8
 - Episode 44: Overview of SPIRE - https://www.youtube.com/watch?v=MuYmhc4mJHI
