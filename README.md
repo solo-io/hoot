@@ -60,3 +60,6 @@ with Cluster API: https://www.youtube.com/watch?v=fKeqbkGiHog
 - Episode 42: Rust-based ztunnel for Istio ambient mesh? https://www.youtube.com/watch?v=nyd_hxCWnds
 - Episode 43: Successes? Lessons? Istio @ Virtru - https://www.youtube.com/watch?v=NP7JTXlQkI8
 - Episode 44: Overview of SPIRE - https://www.youtube.com/watch?v=MuYmhc4mJHI
+- Episode 45: Solve Large Volumes of Metrics Challenges with Istio Service Mesh and Open Telemetry - https://www.youtube.com/watch?v=TGZrwk3L-mo
+- Episode 46: Istio Ambient Service Mesh & Rust-Based Ztunnel Update - https://www.youtube.com/watch?v=fCYAvsk_vlw
+- Episode 47: Rotating certificates in Istio - https://www.youtube.com/watch?v=hD7L-haWJew
