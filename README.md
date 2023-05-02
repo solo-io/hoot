@@ -63,3 +63,5 @@ with Cluster API: https://www.youtube.com/watch?v=fKeqbkGiHog
 - Episode 45: Solve Large Volumes of Metrics Challenges with Istio Service Mesh and Open Telemetry - https://www.youtube.com/watch?v=TGZrwk3L-mo
 - Episode 46: Istio Ambient Service Mesh & Rust-Based Ztunnel Update - https://www.youtube.com/watch?v=fCYAvsk_vlw
 - Episode 47: Rotating certificates in Istio - https://www.youtube.com/watch?v=hD7L-haWJew
+- Episode 48: GitOps and Service Mesh for Resilient and Secure Operations - https://www.youtube.com/watch?v=hYHgUPO13pw
+- Episode 49: Configuring external services with Istio's ServiceEntry - https://www.youtube.com/watch?v=FOFzetag9d4
