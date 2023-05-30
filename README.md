@@ -65,3 +65,4 @@ with Cluster API: https://www.youtube.com/watch?v=fKeqbkGiHog
 - Episode 47: Rotating certificates in Istio - https://www.youtube.com/watch?v=hD7L-haWJew
 - Episode 48: GitOps and Service Mesh for Resilient and Secure Operations - https://www.youtube.com/watch?v=hYHgUPO13pw
 - Episode 49: Configuring external services with Istio's ServiceEntry - https://www.youtube.com/watch?v=FOFzetag9d4
+- Episode 50 - Kubernetes Networking and Cilium - https://www.youtube.com/watch?v=TxPEpArfjwY&t=5s
