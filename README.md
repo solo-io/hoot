@@ -12,7 +12,7 @@ Please [open an issue](https://github.com/solo-io/hoot/issues) if you have an id
 This repo contains the code, slides and show notes for our Hoot series:
 
 The full playlist:
-https://www.youtube.com/playlist?list=PLBOtlFtGznBjESk9G7wHd9HWzprbJuoRS
+ [click Here](https://www.youtube.com/playlist?list=PLBOtlFtGznBjESk9G7wHd9HWzprbJuoRS).
 
 Videos:
 - Episode 1: Intro to envoy - https://www.youtube.com/watch?v=KsO4pw4tEGA
@@ -32,20 +32,20 @@ Videos:
 - Episode 15: Envoy + External Services - https://www.youtube.com/watch?v=Veib7duO0vw
 - Episode 16: Adding real-time updates to OPA with OPAL - https://www.youtube.com/watch?v=n2TdVmY8CLI
 - Episode 17: Envoy + Rate Limiting - https://www.youtube.com/watch?v=1Y4kOu2TJ1k
-- Episode 18: Envoy Filters- https://www.youtube.com/watch?v=yOtEG1luTwU
+- Episode 18: Envoy Filters - https://www.youtube.com/watch?v=yOtEG1luTwU
 - Episode 19: eBPF: A Top-Down view - https://www.youtube.com/watch?v=PqghsyBF7ug
 - Episode 20: 1-Click Upgrade to Istio 1.13 using Helm - https://www.youtube.com/watch?v=Q3G5TEmXq7o
-- Episode 21: Istio In Action Book Highlight https://www.youtube.com/watch?v=gpWuVnOyWnE
-- Episode 22: Accelerate your mesh with eBPF and Merbridge https://www.youtube.com/watch?v=r2wgInmsqsU
-- Episode 23 HOW to increase application resiliency for Kubernetes services running on Spot VMs https://www.youtube.com/watch?v=WIcWekCQTJU
-- Episode 24 Debug Envoy Configs and Analyze Access Logs https://www.youtube.com/watch?v=OQFFIXFeZns
-- Episode 25 Istio + Spire + VM: https://www.youtube.com/watch?v=WOPoNqfrhb4
-- Episode 26 Declarative Kubernetes Lifecycle Management Across Multi-Clusters/Clouds 
-with Cluster API: https://www.youtube.com/watch?v=fKeqbkGiHog
-- Episode 27 Gloo Cilium and Istio Seamlessly Together: https://www.youtube.com/watch?v=bAjAJtQioPU
-- Episode 28 What is new in Istio 1.14?:  https://www.youtube.com/watch?v=XxMAjo8yrLI
-- Episode 29 Porting eBPF applications to BumbleBee: https://www.youtube.com/watch?v=NQcOQ1-sJII
-- Episode 30 HTTP/3 With Envoy Explained: https://www.youtube.com/watch?v=TjaJ5oMxNpc
+- Episode 21: Istio In Action Book Highlight - https://www.youtube.com/watch?v=gpWuVnOyWnE
+- Episode 22: Accelerate your mesh with eBPF and Merbridge - https://www.youtube.com/watch?v=r2wgInmsqsU
+- Episode 23: HOW to increase application resiliency for Kubernetes services running on Spot VMs - https://www.youtube.com/watch?v=WIcWekCQTJU
+- Episode 24: Debug Envoy Configs and Analyze Access Logs - https://www.youtube.com/watch?v=OQFFIXFeZns
+- Episode 25: Istio + Spire + VM - https://www.youtube.com/watch?v=WOPoNqfrhb4
+- Episode 26: Declarative Kubernetes Lifecycle Management Across Multi-Clusters/Clouds 
+with Cluster API - https://www.youtube.com/watch?v=fKeqbkGiHog
+- Episode 27: Gloo Cilium and Istio Seamlessly Together - https://www.youtube.com/watch?v=bAjAJtQioPU
+- Episode 28: What is new in Istio 1.14? -  https://www.youtube.com/watch?v=XxMAjo8yrLI
+- Episode 29: Porting eBPF applications to BumbleBee - https://www.youtube.com/watch?v=NQcOQ1-sJII
+- Episode 30: HTTP/3 With Envoy Explained - https://www.youtube.com/watch?v=TjaJ5oMxNpc
 - Episode 31: Cilium L7 Policies vs Istio’s -  https://youtu.be/d4mEnVZKum8
 - Episode 32: GraphQL for Developers or Platform Team? - https://youtu.be/cFcIb1mh998
 - Episode 33: Speed your Istio development environment with vcluster - https://youtu.be/b7OkYjvLf4Y
@@ -57,7 +57,7 @@ with Cluster API: https://www.youtube.com/watch?v=fKeqbkGiHog
 - Episode 39: Ambient and Gloo Mesh - https://www.youtube.com/watch?v=vxy-yqarirY
 - Episode 40: Ask Us Anything about Istio Ambient Explained Book - https://www.youtube.com/watch?v=fyX1PrRaTf4
 - Episode 41: What is NEW in Istio 1.16? - https://www.youtube.com/watch?v=hO8PlznWbmI
-- Episode 42: Rust-based ztunnel for Istio ambient mesh? https://www.youtube.com/watch?v=nyd_hxCWnds
+- Episode 42: Rust-based ztunnel for Istio ambient mesh? - https://www.youtube.com/watch?v=nyd_hxCWnds
 - Episode 43: Successes? Lessons? Istio @ Virtru - https://www.youtube.com/watch?v=NP7JTXlQkI8
 - Episode 44: Overview of SPIRE - https://www.youtube.com/watch?v=MuYmhc4mJHI
 - Episode 45: Solve Large Volumes of Metrics Challenges with Istio Service Mesh and Open Telemetry - https://www.youtube.com/watch?v=TGZrwk3L-mo
@@ -65,4 +65,4 @@ with Cluster API: https://www.youtube.com/watch?v=fKeqbkGiHog
 - Episode 47: Rotating certificates in Istio - https://www.youtube.com/watch?v=hD7L-haWJew
 - Episode 48: GitOps and Service Mesh for Resilient and Secure Operations - https://www.youtube.com/watch?v=hYHgUPO13pw
 - Episode 49: Configuring external services with Istio's ServiceEntry - https://www.youtube.com/watch?v=FOFzetag9d4
-- Episode 50 - Kubernetes Networking and Cilium - https://www.youtube.com/watch?v=TxPEpArfjwY&t=5s
+- Episode 50: Kubernetes Networking and Cilium - https://www.youtube.com/watch?v=TxPEpArfjwY&t=5s
