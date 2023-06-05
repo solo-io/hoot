@@ -12,7 +12,7 @@ Please [open an issue](https://github.com/solo-io/hoot/issues) if you have an id
 This repo contains the code, slides and show notes for our Hoot series:
 
 The full playlist:
- [click Here](https://www.youtube.com/playlist?list=PLBOtlFtGznBjESk9G7wHd9HWzprbJuoRS).
+- [Youtube Playlist](https://www.youtube.com/playlist?list=PLBOtlFtGznBjESk9G7wHd9HWzprbJuoRS).
 
 Videos:
 - Episode 1: Intro to envoy - https://www.youtube.com/watch?v=KsO4pw4tEGA
