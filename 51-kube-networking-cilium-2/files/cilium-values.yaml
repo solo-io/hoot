@@ -1,0 +1,22 @@
+operator:
+  prometheus:
+    enabled: true
+kubeProxyReplacement: strict
+k8sServiceHost: kind-control-plane
+k8sServicePort: 6443
+hubble:
+  enabled: true
+  relay:
+    enabled: true
+    prometheus:
+      enabled: true
+  ui:
+    enabled: true
+  metrics:
+    enableOpenMetrics: true
+    enabled:
+      - dns
+      - drop
+      - tcp
+      - icmp
+      - "httpV2:exemplars=true;labelsContext=source_ip,source_namespace,source_workload,destination_ip,destination_namespace,destination_workload,traffic_direction;sourceContext=workload-name|reserved-identity;destinationContext=workload-name|reserved-identity"
