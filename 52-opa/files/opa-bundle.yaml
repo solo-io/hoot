@@ -1,0 +1,81 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: opa
+  namespace: opa
+  labels:
+    app: opa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: opa
+  template:
+    metadata:
+      labels:
+        app: opa
+    spec:
+      containers:
+      - name: opa
+        image: openpolicyagent/opa:0.53.1-envoy-2-static
+        securityContext:
+          runAsUser: 1111
+        volumeMounts:
+          - name: opa-config
+            mountPath: /config
+            readOnly: true
+        args:
+          - "run"
+          - "--server"
+          - "--config-file=/config/config.yaml"
+          - "--addr=0.0.0.0:8181"
+          - "--diagnostic-addr=0.0.0.0:8282"
+          - "--ignore=.*"
+      volumes:
+      - name: opa-config
+        configMap:
+          name: opa-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: opa
+  namespace: opa
+  labels:
+    app: opa
+spec:
+  ports:
+  - name: grpc
+    port: 9191
+    targetPort: 9191
+  selector:
+    app: opa
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: opa-config
+  namespace: opa
+data:
+  config.yaml: |
+    services:
+      - name: controller
+        url: https://www.openpolicyagent.org
+    services:
+      - name: google
+        url: <TODO: update bucket URL> # e.g. https://storage.googleapis.com/opademo
+    bundles:
+      authz:
+        service: google
+        # This will read the bundle from e.g. https://storage.googleapis.com/opademo/opa-bundles/bundle.tar.gz
+        resource: <TODO: set the additional subfolder/bundle name> # e.g. opa-bundles/bundle.tar.gz
+        polling:
+          min_delay_seconds: 30
+          max_delay_seconds: 60
+    plugins:
+      envoy_ext_authz_grpc:
+        path: istio/authz/allow
+    decision_logs:
+      console: true
+    status:
+      console: true
