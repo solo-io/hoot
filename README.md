@@ -68,3 +68,4 @@ with Cluster API - https://www.youtube.com/watch?v=fKeqbkGiHog
 - Episode 50: Kubernetes Networking and Cilium - Part 1 - https://www.youtube.com/watch?v=TxPEpArfjwY
 - Episode 51: Kubernetes Networking and Cilium - Part 2 - https://www.youtube.com/watch?v=he2sLeJsMqU
 - Episode 52: Istio and Open Policy Agent (OPA) - https://www.youtube.com/watch?v=EnckV6lyre8
+- Episode 53: Cut Service Mesh Overhead by 90% or More with Istio Ambient Mesh - https://www.youtube.com/watch?v=AHujRw0H8F4
