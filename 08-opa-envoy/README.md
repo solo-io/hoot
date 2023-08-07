@@ -40,15 +40,18 @@ envoy -c envoy.yaml
 
 ```
 SERVICE_URL=localhost:8000
-ALICE_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiZ3Vlc3QiLCJzdWIiOiJZV3hwWTJVPSIsIm5iZiI6MTUxNDg1MTEzOSwiZXhwIjoxNjQxMDgxNTM5fQ.K5DnnbbIOspRbpCr2IKXE9cPVatGOCBrBQobQmBmaeU"
-BOB_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJzdWIiOiJZbTlpIiwibmJmIjoxNTE0ODUxMTM5LCJleHAiOjE2NDEwODE1Mzl9.WCxNAveAVAdRCmkpIObOTaSd0AJRECY2Ch2Qdic3kU8"
+ALICE_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiZ3Vlc3QiLCJzdWIiOiJZV3hwWTJVPSIsIm5iZiI6MTUxNDg1MTEzOSwiZXhwIjoxOTQxMDgxNTM5fQ.rN_hxMsoQzCjg6lav6mfzDlovKM9azaAjuwhjq3n9r8"
+BOB_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJzdWIiOiJZbTlpIiwibmJmIjoxNTE0ODUxMTM5LCJleHAiOjE5NDEwODE1Mzl9.ek3jmNLPclafELVLTfyjtQNj0QKIEGrbhKqpwXmQ8EQ"
 ```
+The secret of the JWTs is `secret`
 
 Now you can curl!
 for example, alice can do a GET but not a POST:
 ```
 curl -i -H "Authorization: Bearer "$ALICE_TOKEN"" http://$SERVICE_URL/people
 curl -i -H "Authorization: Bearer "$ALICE_TOKEN"" -d '{"firstname":"Charlie", "lastname":"OPA"}' -H "Content-Type: application/json" -X POST http://$SERVICE_URL/people
+curl -i -H "Authorization: Bearer "$BOB_TOKEN"" http://$SERVICE_URL/people
+curl -i -H "Authorization: Bearer "$BOB_TOKEN"" -d '{"firstname":"Charlie", "lastname":"OPA"}' -H "Content-Type: application/json" -X POST http://$SERVICE_URL/people
 ```
 
 See full info here:
