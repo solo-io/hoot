@@ -1,6 +1,6 @@
 # Envoy Ext auth filter
 See docs for external auth service:
-https://www.envoyproxy.io/docs/envoy/latest/api-v2/service/auth/v2/external_auth.proto.html
+https://www.envoyproxy.io/docs/envoy/latest/api-v3/extensions/filters/http/ext_authz/v3/ext_authz.proto
 
 Docs for the filter:
 https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/ext_authz_filter
@@ -18,7 +18,7 @@ https://github.com/open-policy-agent/opa-envoy-plugin
 
 # Demo
 This demo is based on the code from here:
-https://github.com/open-policy-agent/opa-envoy-plugin/blob/master/quick_start.yaml
+https://www.openpolicyagent.org/docs/latest/envoy-tutorial-standalone-envoy/
 See this URL for more information and examples. It has been adapted to run without kubernetes.
 
 The relevant files:
