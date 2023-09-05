@@ -192,8 +192,9 @@ spec:
               mountPath: /run/spire/server/data
             - name: spire-server-socket
               mountPath: /tmp/spire-server/private
+              readOnly: false
         - name: spire-controller-manager
-          image: ghcr.io/spiffe/spire-controller-manager:nightly
+          image: ghcr.io/spiffe/spire-controller-manager:0.2.3
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 9443
@@ -237,7 +238,7 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - name: api
+    - name: grpc
       port: 8081
       targetPort: 8081
       protocol: TCP
@@ -255,7 +256,7 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - name: api
+    - name: tcp-api
       port: 8443
       protocol: TCP
   selector:

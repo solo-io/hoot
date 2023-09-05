@@ -154,7 +154,7 @@ spec:
                   type: string
                 type: array
               namespaceSelector:
-                description: NamespaceSelector selects the namespaces that are targetted
+                description: NamespaceSelector selects the namespaces that are targeted
                   by this CRD.
                 properties:
                   matchExpressions:
@@ -199,7 +199,7 @@ spec:
                     type: object
                 type: object
               podSelector:
-                description: PodSelector selects the pods that are targetted by this
+                description: PodSelector selects the pods that are targeted by this
                   CRD.
                 properties:
                   matchExpressions:
@@ -430,3 +430,17 @@ subjects:
   name: spire-server
   namespace: spire
 ---
+# Binds leader-election-role to spire-server service account.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: leader-election-role-binding
+  namespace: spire
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: leader-election-role
+subjects:
+- kind: ServiceAccount
+  name: spire-server
+  namespace: spire
