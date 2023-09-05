@@ -13,7 +13,7 @@ Make sure you update the YAML files with your own cluster name and trust domain 
 
 1. Update the `clusterName` and `trustDomain` fields in [`spire-controller-manager-config.yaml`](demo/spire-controller-manager-config.yaml)
 
-1. Create the namespace and deploy the CSI driver, CRDs and the controll manager configuration and webhook:
+1. Create the namespace and deploy the CSI driver, CRDs and the controller manager configuration and webhook:
 
 ```shell
 demo/deploy-prereqs.sh
@@ -59,6 +59,12 @@ kubectl apply -f demo/clusterspiffeid.yaml
 
 ```shell
 istioctl install -f demo/istio-spire-config.yaml
+```
+
+1. While Istio is being installed, patch the Ingress gateway deployment, so we get a SPIFFE ID for the ingress gateway:
+
+```shell
+kubectl patch deployment istio-ingressgateway -n istio-system -p '{"spec":{"template":{"metadata":{"labels":{"spiffe.io/spire-managed-identity": "true"}}}}}'
 ```
 
 1. We can check the list of registration entries:

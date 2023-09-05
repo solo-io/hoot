@@ -64,6 +64,11 @@ data:
           skip_kubelet_verification = true
         }
       }
+
+      WorkloadAttestor "unix" {
+          plugin_data {
+          }
+      }
     }
     health_checks {
         listener_enabled = true
@@ -99,7 +104,7 @@ spec:
       serviceAccountName: spire-agent
       containers:
         - name: spire-agent
-          image: ghcr.io/spiffe/spire-agent:1.5.1
+          image: ghcr.io/spiffe/spire-agent:1.2.3
           imagePullPolicy: IfNotPresent
           args: ["-config", "/run/spire/config/agent.conf"]
           volumeMounts:
@@ -148,7 +153,7 @@ spec:
         # of all the little details required to register a CSI driver with
         # the kubelet.
         - name: node-driver-registrar
-          image: quay.io/k8scsi/csi-node-driver-registrar:v2.0.1
+          image: registry.k8s.io/sig-storage/csi-node-driver-registrar:v2.4.0
           imagePullPolicy: IfNotPresent
           args: [
             "-csi-address", "/spiffe-csi/csi.sock",

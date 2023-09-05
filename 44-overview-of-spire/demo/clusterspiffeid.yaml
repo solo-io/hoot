@@ -4,7 +4,9 @@ metadata:
   name: service-account-spiffeid
 spec:
   spiffeIDTemplate: "spiffe://{{ .TrustDomain }}/ns/{{ .PodMeta.Namespace }}/sa/{{ .PodSpec.ServiceAccountName }}"
-  dnsNameTemplates: ["{{ .PodMeta.Name }}"]
+  podSelector:
+    matchLabels:
+      spiffe.io/spire-managed-identity: "true"
 
 # OTHER EXAMPLES:
 # apiVersion: spire.spiffe.io/v1alpha1
