@@ -1,6 +1,8 @@
 package envoy.authz
 import input.attributes.request.http as http_request
+
 default allow = false
+
 token = {"valid": valid, "payload": payload} {
     [_, encoded] := split(http_request.headers.authorization, " ")
     [valid, _, payload] := io.jwt.decode_verify(encoded, {"secret": "secret"})
